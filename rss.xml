@@ -517,11 +517,11 @@
     
       <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
     
-      <category term="crontab" scheme="http://yoursite.com/tags/crontab/"/>
-    
       <category term="Pip" scheme="http://yoursite.com/tags/Pip/"/>
     
       <category term="定时" scheme="http://yoursite.com/tags/%E5%AE%9A%E6%97%B6/"/>
+    
+      <category term="crontab" scheme="http://yoursite.com/tags/crontab/"/>
     
   </entry>
   
