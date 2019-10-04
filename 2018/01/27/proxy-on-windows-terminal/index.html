@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="缘起之前遇到在 Windows 下给终端（cmd，Git Bash，PowerShell）配置代理时，总是模模糊糊的就过去了，今天又折腾了一次，恰巧有时间记下来，不想要再次重复了。">
-<meta name="keywords" content="CURL,折腾,ping,Windows,终端,代理,proxy">
+<meta name="keywords" content="折腾,CURL,ping,Windows,终端,代理,proxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="给 Windows 的终端配置代理">
 <meta property="og:url" content="http://yoursite.com/2018/01/27/proxy-on-windows-terminal/index.html">
@@ -424,9 +424,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/CURL/" rel="tag"># CURL</a>
-            
               <a href="/tags/折腾/" rel="tag"># 折腾</a>
+            
+              <a href="/tags/CURL/" rel="tag"># CURL</a>
             
               <a href="/tags/ping/" rel="tag"># ping</a>
             
@@ -692,14 +692,14 @@
     }
   }
 
-  fetch('https://app-router.leancloud.cn/2/route?appId=p5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz')
+  fetch('https://app-router.leancloud.cn/2/route?appId=gp5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz')
     .then(response => response.json())
     .then(({ api_server }) => {
       var Counter = (method, url, data) => {
         return fetch(`https://${api_server}/1.1${url}`, {
           method: method,
           headers: {
-            'X-LC-Id': 'p5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz',
+            'X-LC-Id': 'gp5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz',
             'X-LC-Key': 'hBcmnbod2qG3t7K4XecG6Y7Y',
             'Content-Type': 'application/json',
           },

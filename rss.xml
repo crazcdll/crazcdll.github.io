@@ -546,13 +546,13 @@
     
       <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
     
+      <category term="crontab" scheme="http://yoursite.com/tags/crontab/"/>
+    
       <category term="Pip" scheme="http://yoursite.com/tags/Pip/"/>
     
       <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
     
       <category term="定时" scheme="http://yoursite.com/tags/%E5%AE%9A%E6%97%B6/"/>
-    
-      <category term="crontab" scheme="http://yoursite.com/tags/crontab/"/>
     
   </entry>
   
@@ -689,9 +689,9 @@
       <category term="Windows" scheme="http://yoursite.com/categories/Windows/"/>
     
     
-      <category term="CURL" scheme="http://yoursite.com/tags/CURL/"/>
-    
       <category term="折腾" scheme="http://yoursite.com/tags/%E6%8A%98%E8%85%BE/"/>
+    
+      <category term="CURL" scheme="http://yoursite.com/tags/CURL/"/>
     
       <category term="ping" scheme="http://yoursite.com/tags/ping/"/>
     
