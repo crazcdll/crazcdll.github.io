@@ -348,13 +348,17 @@
         <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>在 <strong>Ubuntu</strong> 上设置了一个 <strong>crontab</strong> 的定时任务，每天上午十点执行一个爬虫。</p>
 <p>今天早上检查爬虫的输出文件，发现并没有成功执行，报错 <code>scrapy: 未找到命令</code> 没找到。</p>
 <a id="more"></a>
+
 <p>因为不是在 <strong>root</strong> 用户下安装的 <strong>scrapy</strong>，是在 <strong>crawl</strong> 用户下，然后一开始没注意，应该是用 <strong>root</strong> 用户配置的定时任务，导致定时任务找不到 <strong>scrapy</strong>，这个可以理解。但是当我在 <strong>crawl</strong> 用户下，重新配置了爬虫，发现还是报同样的错误。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -l  <span class="comment"># 通过这个命令，可以查看当前用户下的定时任务</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来经过查阅得知，<strong>crontab</strong> 有自己的环境变量配置，在 <code>/etc/crontab</code> 文件中，并不会自动加载当前用户的环境变量。所以在执行命令之前，应该先配置好环境变量。</p>
 <p>所以在 <strong>crontab</strong> 用户下，执行命令前先载入环境变量，如下。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">00 10 * * * <span class="built_in">source</span> <span class="variable">$HOME</span>/.bash_profile &amp;&amp; <span class="variable">$HOME</span>/path/to/script;sh /home/crawl/exec_aqi.sh &amp;  &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>
+
 <p>如果直接修改 <code>/etc/crontab</code> 文件，如</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">SHELL=/bin/bash</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=root</span><br><span class="line"></span><br><span class="line"><span class="comment"># For details see man 4 crontabs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Example of job definition:</span></span><br><span class="line"><span class="comment"># .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="comment"># |  .------------- hour (0 - 23)</span></span><br><span class="line"><span class="comment"># |  |  .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></span><br><span class="line"><span class="comment"># |  |  |  |  |</span></span><br><span class="line"><span class="comment"># *  *  *  *  * user-name  command to be executed</span></span><br><span class="line">00 10 * * * crawl sh /home/crawl/exec_aqi.sh &amp;</span><br></pre></td></tr></table></figure>
+
 <p>这样不行，因为这样只是制定了运行的用户，并没有修改 <strong>环境变量</strong>。倒不如在当前用户下添加定时任务，同时修改环境变量。</p>
 <p>修改完之后，最好执行命令 <code>sudo service crond restart</code> 使立即生效。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>

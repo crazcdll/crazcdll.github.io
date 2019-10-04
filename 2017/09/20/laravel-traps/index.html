@@ -353,7 +353,8 @@
 </li>
 </ol>
 <a id="more"></a>
-<ol>
+
+<ol start="3">
 <li><p>migrate 数据库时，会报错<br><code>Specified key was too long error</code><br>需要修改 <code>AppServiceProvider.php</code> 文件，添加下面的代码</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Schema</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Schema::defaultStringLength(<span class="number">191</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -365,6 +366,7 @@
 </li>
 <li><p>Windows 下迁移数据库的时候，可能需要修改一个文件：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//to fix this, all you have to do is to edit your AppServiceProvider.php file and add to the boot method a default string length</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Schema</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">boot</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Schema::defaultStringLength(<span class="number">191</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>​</p>
 </li>
 </ol>

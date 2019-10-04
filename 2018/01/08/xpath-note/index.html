@@ -350,6 +350,7 @@
 <p>XPath 被设计为供 XSLT、XPointer 以及其他 XML 解析软件使用。</p>
 <p>XPath 表达式可返回节点集、字符串、逻辑值以及数字。</p>
 <a id="more"></a>
+
 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
 <li><p><strong>XPath 路径表达式：</strong> XPath 使用路径表达式来<strong>选取</strong> XML 文档中的节点或者节点集。这些路径表达式和我们在常规的电脑文件系统中看到的表达式非常相似。节点是通过沿着路径 (path) 或者步 (steps) 来选取的。</p>
 </li>
@@ -390,13 +391,10 @@
 <th>返回值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>\</td>
-<td></td>
+<tbody><tr>
+<td>|</td>
 <td>计算两个节点集</td>
-<td>//book \</td>
-<td>//cd</td>
+<td>//book | //cd</td>
 <td>返回所有拥有 book 和 cd 元素的节点集</td>
 </tr>
 <tr>
@@ -477,35 +475,294 @@
 <td>5 mod 2</td>
 <td>1</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
 <li><p>最有用的路径表达式</p>
-<p>| 表达式      | 描述                            |<br>| ——– | —————————– |<br>| nodename | 选取此节点的所有子节点。                  |<br>| /        | 从根节点选取。                       |<br>| //       | 从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。 |<br>| .        | 选取当前节点。                       |<br>| ..       | 选取当前节点的父节点。                   |<br>| @        | 选取属性。                         |</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nodename</td>
+<td>选取此节点的所有子节点。</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从根节点选取。</td>
+</tr>
+<tr>
+<td>//</td>
+<td>从匹配选择的当前节点选择文档中的节点，而不考虑它们的位置。</td>
+</tr>
+<tr>
+<td>.</td>
+<td>选取当前节点。</td>
+</tr>
+<tr>
+<td>..</td>
+<td>选取当前节点的父节点。</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选取属性。</td>
+</tr>
+</tbody></table>
 <p>路径表达式实例</p>
-<p>| 路径表达式           | 结果                                       |<br>| ————— | —————————————- |<br>| bookstore       | 选取 bookstore 元素的所有子节点。                   |<br>| /bookstore      | 选取根元素 bookstore。注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！ |<br>| bookstore/book  | 选取属于 bookstore 的子元素的所有 book 元素。          |<br>| //book          | 选取所有 book 子元素，而不管它们在文档中的位置。              |<br>| bookstore//book | 选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。 |<br>| //@lang         | 选取名为 lang 的所有属性。                         |</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bookstore</td>
+<td>选取 bookstore 元素的所有子节点。</td>
+</tr>
+<tr>
+<td>/bookstore</td>
+<td>选取根元素 bookstore。注释：假如路径起始于正斜杠( / )，则此路径始终代表到某元素的绝对路径！</td>
+</tr>
+<tr>
+<td>bookstore/book</td>
+<td>选取属于 bookstore 的子元素的所有 book 元素。</td>
+</tr>
+<tr>
+<td>//book</td>
+<td>选取所有 book 子元素，而不管它们在文档中的位置。</td>
+</tr>
+<tr>
+<td>bookstore//book</td>
+<td>选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。</td>
+</tr>
+<tr>
+<td>//@lang</td>
+<td>选取名为 lang 的所有属性。</td>
+</tr>
+</tbody></table>
 </li>
 <li><p>谓语实例</p>
-<p>| 路径表达式                              | 结果                                       |<br>| ———————————- | —————————————- |<br>| /bookstore/book[1]                 | 选取属于 bookstore 子元素的第一个 book 元素。          |<br>| /bookstore/book[last()]            | 选取属于 bookstore 子元素的最后一个 book 元素。         |<br>| /bookstore/book[last()-1]          | 选取属于 bookstore 子元素的倒数第二个 book 元素。        |<br>| /bookstore/book[position()<3] | 选取最前面的两个属于 bookstore 元素的子元素的 book 元素。 title[@lang] 选取所有拥有名为 lang 的属性的 title title[@lang="eng" ] 选取所有 元素，且这些元素拥有值为 eng 的 属性。 book[price>35.00]       | 选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。 |<br>| /bookstore/book[price&gt;35.00]/title | 选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。 |</3]></p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bookstore/book[1]</td>
+<td>选取属于 bookstore 子元素的第一个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[last()]</td>
+<td>选取属于 bookstore 子元素的最后一个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[last()-1]</td>
+<td>选取属于 bookstore 子元素的倒数第二个 book 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book[position()&lt;3]</td>
+<td>选取最前面的两个属于 bookstore 元素的子元素的 book 元素。</td>
+</tr>
+<tr>
+<td>//title[@lang]</td>
+<td>选取所有拥有名为 lang 的属性的 title 元素。</td>
+</tr>
+<tr>
+<td>//title[@lang=’eng’]</td>
+<td>选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。</td>
+</tr>
+<tr>
+<td>/bookstore/book[price&gt;35.00]</td>
+<td>选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+<tr>
+<td>/bookstore/book[price&gt;35.00]/title</td>
+<td>选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+</tbody></table>
 </li>
 <li><p>选取未知节点</p>
 <p>XPath 通配符可用来选取未知的 XML 元素。</p>
-<p>| 通配符    | 描述         |<br>| —— | ———- |<br>| <em>      | 匹配任何元素节点。  |<br>| @</em>     | 匹配任何属性节点。  |<br>| node() | 匹配任何类型的节点。 |</p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>匹配任何元素节点。</td>
+</tr>
+<tr>
+<td>@*</td>
+<td>匹配任何属性节点。</td>
+</tr>
+<tr>
+<td>node()</td>
+<td>匹配任何类型的节点。</td>
+</tr>
+</tbody></table>
 <p>选取未知节点实例</p>
-<p>| 路径表达式        | 结果                     |<br>| ———— | ———————- |<br>| /bookstore/<em> | 选取 bookstore 元素的所有子元素。 |<br>| //</em>          | 选取文档中的所有元素。            |<br>| //title[@*]  | 选取所有带有属性的 title 元素。    |</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/bookstore/*</td>
+<td>选取 bookstore 元素的所有子元素。</td>
+</tr>
+<tr>
+<td>//*</td>
+<td>选取文档中的所有元素。</td>
+</tr>
+<tr>
+<td>//title[@*]</td>
+<td>选取所有带有属性的 title 元素。</td>
+</tr>
+</tbody></table>
 </li>
 <li><p>选取若干路径</p>
 <p>通过在路径表达式中使用“|”运算符，您可以选取若干个路径。</p>
-<p>| 路径表达式                            | 结果                                       |<br>| ——————————– | —————————————- |<br>| //book/title | //book/price     | 选取 book 元素的所有 title 和 price 元素。          |<br>| //title | //price               | 选取文档中的所有 title 和 price 元素。               |<br>| /bookstore/book/title | //price | 选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。 |</p>
+<table>
+<thead>
+<tr>
+<th>路径表达式</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>//book/title | //book/price</td>
+<td>选取 book 元素的所有 title 和 price 元素。</td>
+</tr>
+<tr>
+<td>//title | //price</td>
+<td>选取文档中的所有 title 和 price 元素。</td>
+</tr>
+<tr>
+<td>/bookstore/book/title | //price</td>
+<td>选取属于 bookstore 元素的 book 元素的所有 title 元素，以及文档中所有的 price 元素。</td>
+</tr>
+</tbody></table>
 </li>
 <li><p>使用轴</p>
-<p>| 轴名称                | 结果                           |<br>| —————— | —————————- |<br>| ancestor           | 选取当前节点的所有先辈（父、祖父等）。          |<br>| ancestor-or-self   | 选取当前节点的所有先辈（父、祖父等）以及当前节点本身。  |<br>| attribute          | 选取当前节点的所有属性。                 |<br>| child              | 选取当前节点的所有子元素。                |<br>| descendant         | 选取当前节点的所有后代元素（子、孙等）。         |<br>| descendant-or-self | 选取当前节点的所有后代元素（子、孙等）以及当前节点本身。 |<br>| following          | 选取文档中当前节点的结束标签之后的所有节点。       |<br>| namespace          | 选取当前节点的所有命名空间节点。             |<br>| parent             | 选取当前节点的父节点。                  |<br>| preceding          | 选取文档中当前节点的开始标签之前的所有节点。       |<br>| preceding-sibling  | 选取当前节点之前的所有同级节点。             |<br>| self               | 选取当前节点。                      |</p>
+<table>
+<thead>
+<tr>
+<th>轴名称</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ancestor</td>
+<td>选取当前节点的所有先辈（父、祖父等）。</td>
+</tr>
+<tr>
+<td>ancestor-or-self</td>
+<td>选取当前节点的所有先辈（父、祖父等）以及当前节点本身。</td>
+</tr>
+<tr>
+<td>attribute</td>
+<td>选取当前节点的所有属性。</td>
+</tr>
+<tr>
+<td>child</td>
+<td>选取当前节点的所有子元素。</td>
+</tr>
+<tr>
+<td>descendant</td>
+<td>选取当前节点的所有后代元素（子、孙等）。</td>
+</tr>
+<tr>
+<td>descendant-or-self</td>
+<td>选取当前节点的所有后代元素（子、孙等）以及当前节点本身。</td>
+</tr>
+<tr>
+<td>following</td>
+<td>选取文档中当前节点的结束标签之后的所有节点。</td>
+</tr>
+<tr>
+<td>namespace</td>
+<td>选取当前节点的所有命名空间节点。</td>
+</tr>
+<tr>
+<td>parent</td>
+<td>选取当前节点的父节点。</td>
+</tr>
+<tr>
+<td>preceding</td>
+<td>选取文档中当前节点的开始标签之前的所有节点。</td>
+</tr>
+<tr>
+<td>preceding-sibling</td>
+<td>选取当前节点之前的所有同级节点。</td>
+</tr>
+<tr>
+<td>self</td>
+<td>选取当前节点。</td>
+</tr>
+</tbody></table>
 </li>
 <li><p>绝对路径和相对路径</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/step/step/...  <span class="comment">&lt;!--- 绝对路径 --&gt;</span></span><br><span class="line"></span><br><span class="line">step/step/...  <span class="comment">&lt;!--- 相对路径 --&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>步的实例</p>
-<p>| 例子                     | 结果                                      |<br>| ———————- | ————————————— |<br>| child::book            | 选取所有属于当前节点的子元素的 book 节点。                |<br>| attribute::lang        | 选取当前节点的 lang 属性。                        |<br>| child::<em>               | 选取当前节点的所有子元素。                           |<br>| attribute::</em>           | 选取当前节点的所有属性。                            |<br>| child::text()          | 选取当前节点的所有文本子节点。                         |<br>| child::node()          | 选取当前节点的所有子节点。                           |<br>| descendant::book       | 选取当前节点的所有 book 后代。                      |<br>| ancestor::book         | 选择当前节点的所有 book 先辈。                      |<br>| ancestor-or-self::book | 选取当前节点的所有 book 先辈以及当前节点（如果此节点是 book 节点） |<br>| child::*/child::price  | 选取当前节点的所有 price 孙节点。                    |</p>
+<table>
+<thead>
+<tr>
+<th>例子</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>child::book</td>
+<td>选取所有属于当前节点的子元素的 book 节点。</td>
+</tr>
+<tr>
+<td>attribute::lang</td>
+<td>选取当前节点的 lang 属性。</td>
+</tr>
+<tr>
+<td>child::*</td>
+<td>选取当前节点的所有子元素。</td>
+</tr>
+<tr>
+<td>attribute::*</td>
+<td>选取当前节点的所有属性。</td>
+</tr>
+<tr>
+<td>child::text()</td>
+<td>选取当前节点的所有文本子节点。</td>
+</tr>
+<tr>
+<td>child::node()</td>
+<td>选取当前节点的所有子节点。</td>
+</tr>
+<tr>
+<td>descendant::book</td>
+<td>选取当前节点的所有 book 后代。</td>
+</tr>
+<tr>
+<td>ancestor::book</td>
+<td>选择当前节点的所有 book 先辈。</td>
+</tr>
+<tr>
+<td>ancestor-or-self::book</td>
+<td>选取当前节点的所有 book 先辈以及当前节点（如果此节点是 book 节点）</td>
+</tr>
+<tr>
+<td>child::*/child::price</td>
+<td>选取当前节点的所有 price 孙节点。</td>
+</tr>
+</tbody></table>
 </li>
 </ol>
 <h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>就是为了使用 XML，可以读取和编辑 XML 文档，以及做一些操作。</p>

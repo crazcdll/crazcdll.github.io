@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="缘起之前遇到在 Windows 下给终端（cmd，Git Bash，PowerShell）配置代理时，总是模模糊糊的就过去了，今天又折腾了一次，恰巧有时间记下来，不想要再次重复了。">
-<meta name="keywords" content="折腾,CURL,ping,Windows,终端,代理,proxy">
+<meta name="keywords" content="CURL,折腾,ping,Windows,终端,代理,proxy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="给 Windows 的终端配置代理">
 <meta property="og:url" content="http://yoursite.com/2018/01/27/proxy-on-windows-terminal/index.html">
@@ -349,8 +349,10 @@
       
         <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>之前遇到在 Windows 下给终端（cmd，Git Bash，PowerShell）配置代理时，总是模模糊糊的就过去了，今天又折腾了一次，恰巧有时间记下来，不想要再次重复了。</p>
 <a id="more"></a>
+
 <p>其实命令很简单，跟在 <strong>Linux</strong> 下没什么区别。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> http_proxy=http://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> https_proxy=http://127.0.0.1:1080</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> http_proxy_user=user</span><br><span class="line"><span class="built_in">set</span> http_proxy_pass=pass</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> https_proxy_user=user</span><br><span class="line"><span class="built_in">set</span> https_proxy_pass=pass</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复</span></span><br><span class="line"><span class="built_in">set</span> http_proxy=</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> https_proxy=</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ubuntu 下命令为 export</span></span><br><span class="line"><span class="comment"># export http_proxy=http://127.0.0.1:1080</span></span><br></pre></td></tr></table></figure>
+
 <p>就是两条命令，前两条。</p>
 <h3 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h3><ol>
 <li>一定要加 <code>http://</code>，直接写域名或者 IP 不行。</li>
@@ -368,6 +370,7 @@
 </li>
 <li><p><strong>PowerShell</strong> 中按照这样设置</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># NOTE: registry keys for IE 8, may vary for other versions</span></span><br><span class="line"><span class="variable">$regPath</span> = <span class="string">'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> Clear-Proxy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> -Path <span class="variable">$regPath</span> -Name ProxyEnable -Value <span class="number">0</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> -Path <span class="variable">$regPath</span> -Name ProxyServer -Value <span class="string">''</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> -Path <span class="variable">$regPath</span> -Name ProxyOverride -Value <span class="string">''</span></span><br><span class="line"></span><br><span class="line">    [Environment]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="literal">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">    [Environment]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="literal">$null</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> Set-Proxy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$proxy</span> = <span class="string">'http://example.com'</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> -Path <span class="variable">$regPath</span> -Name ProxyEnable -Value <span class="number">1</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> -Path <span class="variable">$regPath</span> -Name ProxyServer -Value <span class="variable">$proxy</span></span><br><span class="line">    <span class="built_in">Set-ItemProperty</span> -Path <span class="variable">$regPath</span> -Name ProxyOverride -Value <span class="string">'&lt;local&gt;'</span></span><br><span class="line"></span><br><span class="line">    [Environment]::SetEnvironmentVariable(<span class="string">'http_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">    [Environment]::SetEnvironmentVariable(<span class="string">'https_proxy'</span>, <span class="variable">$proxy</span>, <span class="string">'User'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p><strong>纠结于应该用 <code>set</code> 还是 <code>export</code> 还有一个判断方法是，敲一下这两个命令，如果返回一个长长的列表，就表示应该用这个命令，反之，如果返回找不到这个命令，就不应该用这个命令。</strong></p>
@@ -424,9 +427,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/折腾/" rel="tag"># 折腾</a>
-            
               <a href="/tags/CURL/" rel="tag"># CURL</a>
+            
+              <a href="/tags/折腾/" rel="tag"># 折腾</a>
             
               <a href="/tags/ping/" rel="tag"># ping</a>
             

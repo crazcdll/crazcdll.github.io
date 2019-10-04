@@ -347,13 +347,14 @@
       
         <p>之前在用 <strong>Vue</strong> 和 <strong>React</strong> 的时候知道了 <strong>Virtual Dom</strong> 这个概念， 大概知道是起什么作用的。最近深入理解了一下这个概念，从 <strong>what</strong>、<strong>why</strong> 到 <strong>how</strong>。</p>
 <a id="more"></a>
+
 <h2 id="什么是-Virtual-DOM"><a href="#什么是-Virtual-DOM" class="headerlink" title="什么是 Virtual DOM"></a>什么是 Virtual DOM</h2><p><strong>DOM</strong> 大家都知道，<strong>Document Object Model</strong>，<strong>文档对象模型</strong>，它将文档解析为一个由节点和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将web页面和脚本或程序语言连接起来。详细参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Introduction" target="_blank" rel="noopener">什么是 DOM?</a></p>
 <p>那 Virtual DOM 呢？</p>
 <p>之前的前端工程师一般使用 JQuery 来操作 DOM，监控数据变化，完成各种需求。然而随着需求越来越复杂，页面也越来越复杂，臃肿，一直用 JQuery 来手动操作的话，有时候会不方便，比较烦。然后就出现了一些 <strong>数据驱动</strong> 的框架。</p>
 <p>前端工程师通过监听页面中数据的变化，在浏览器中完成计算后，生成新的 DOM 节点，更新 DOM，完成页面上响应的改变。</p>
 <p>由于要监听 <strong>数据的变化</strong>，就需要 <strong>作比较</strong>，分析哪里变化了，哪里没有变。也就是需要创造一个数据结构来存储旧的 DOM，然后根据数据的变化，生成新的 DOM，再作比较，在更新的时候，只更新变化的部分即可。</p>
 <p>Virtual DOM 概括来讲，就是在数据和真实 DOM 之间建立了一层缓冲。</p>
-<p>于是这里就有了两个操作，<strong>diff</strong> 和  <strong>patch</strong>，分别用来 <strong>比较差异 </strong>和 <strong>更新 DOM</strong>。</p>
+<p>于是这里就有了两个操作，<strong>diff</strong> 和  <strong>patch</strong>，分别用来 <strong>比较差异 *<em>和 *</em>更新 DOM</strong>。</p>
 <h2 id="为什么要用-Virtual-DOM"><a href="#为什么要用-Virtual-DOM" class="headerlink" title="为什么要用 Virtual DOM"></a>为什么要用 Virtual DOM</h2><p>按照我的理解，主要是写代码的便利性和一种编程思想的引入，性能优化是其次，而且关于 React 的 Virtual DOM 是否一定提高了性能是存疑的，网上有很多的讨论，例如 <a href="https://www.zhihu.com/question/31809713" target="_blank" rel="noopener">网上都说操作真实 DOM 慢，但测试结果却比 React 更快，为什么？</a>， [<a href="https://segmentfault.com/q/1010000010520929" target="_blank" rel="noopener">Vue为什么要用VDOM？</a>]，<a href="http://www.zcfy.cc/article/the-one-thing-that-no-one-properly-explains-about-react-why-virtual-dom-hashnode-1211.html" target="_blank" rel="noopener">React中一个没人能解释清楚的问题——为什么要使用Virtual DOM</a>，可以总结为下面节点：</p>
 <ul>
 <li><p>React 火是因为通过引入函数式思维来加强对状态的管理、组件系统让无缝使用第三方组件成为可能、Virtual DOM 可以渲染到非 DOM 的后端从而催生 ReactNative</p>

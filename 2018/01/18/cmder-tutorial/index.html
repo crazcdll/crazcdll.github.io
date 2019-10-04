@@ -350,6 +350,7 @@
 <p>虽然 cmder 可以开箱即用，但后来随着使用时间的增多，发现还是需要根据自己的喜好配置一下的。</p>
 <p>在此记录下来，以备后用。</p>
 <a id="more"></a>
+
 <h3 id="bash-类型"><a href="#bash-类型" class="headerlink" title="bash 类型"></a>bash 类型</h3><p><strong>cmder</strong> 支持多种 <strong>bash</strong> 类型，在新建窗口的时候可以选择启用哪个 bash，需要先安装到系统中。如果是安装了 With Git for Windows 的 Windows 10 的话，至少有 <strong>cmd</strong>，<strong>PowerShell</strong>，<strong>Git Bash</strong> 三种可以选择。</p>
 <p>我比较喜欢 Git Bash，更接近于 Linux 的体验。</p>
 <h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><p>根据选择选择 bash 的不同，需要在不同位置添加 alias。</p>
@@ -376,6 +377,7 @@
 <li><p>新建与 <strong>alias</strong> 对应的 <strong>function</strong></p>
 <p>PowerShell 对于 alias 的机制是必须基于一个 function，想要像 Linux 那样直接 <code>gs = git status</code> 不行，必须采用 function 的方式才行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function GitStatus &#123; &amp; git status $args &#125;</span><br><span class="line">New-Alias -Name gs -Value GitStatus -Force -Option AllScope</span><br></pre></td></tr></table></figure>
+
 <p>之后重启 PowerShell 就好了。</p>
 </li>
 </ol>

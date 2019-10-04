@@ -353,7 +353,8 @@
 </li>
 </ol>
 <a id="more"></a>
-<ol>
+
+<ol start="2">
 <li><p>Mint-UI 的 Datetime Picker</p>
 <p>调用 picker 后，滑动选择日期时后面的页面会跟着滚动，影响使用体验。发现官方一直没有修复这个问题，在 <a href="https://github.com/ElemeFE/mint-ui/issues/891" target="_blank" rel="noopener">Github  issues</a> 里面有用户给出了解决办法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 打开 picker 的方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">openPicker() &#123;</span><br><span class="line">  <span class="keyword">this</span>.$refs.picker.open();</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'touchmove'</span>, <span class="keyword">this</span>.moveHandler, <span class="literal">false</span>);</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'touch'</span>, <span class="keyword">this</span>.touchHandler, <span class="literal">false</span>);</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'click'</span>, <span class="keyword">this</span>.touchHandler, <span class="literal">false</span>);</span><br><span class="line">&#125;,</span><br><span class="line">moveHandler() &#123;</span><br><span class="line">  event.preventDefault();</span><br><span class="line">  event.stopPropagation();</span><br><span class="line">&#125;,</span><br><span class="line">touchHandler() &#123;</span><br><span class="line">  <span class="keyword">if</span> (event.target.className.includes(<span class="string">'mint-datetime-cancel'</span>) || event.target.className.includes(<span class="string">'v-modal'</span>)) &#123;</span><br><span class="line">    <span class="built_in">window</span>.removeEventListener(<span class="string">'touchmove'</span>, <span class="keyword">this</span>.moveHandler, <span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">window</span>.removeEventListener(<span class="string">'touch'</span>, <span class="keyword">this</span>.touchHandler, <span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">window</span>.removeEventListener(<span class="string">'click'</span>, <span class="keyword">this</span>.touchHandler, <span class="literal">false</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
@@ -362,6 +363,7 @@
 <p>这个方法在各个浏览器的实现不同。</p>
 <p>在转换一个从日历插件获得的日期的时候，用了这个方法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options = &#123;</span><br><span class="line">  year: <span class="string">'numeric'</span>,</span><br><span class="line">  month: <span class="string">'2-digit'</span>,</span><br><span class="line">  day: <span class="string">'2-digit'</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">this</span>.showBirthday = <span class="keyword">this</span>.birthday.toLocaleDateString(<span class="string">'zh-CN'</span>, options).split(<span class="string">"/"</span>).join(<span class="string">'-'</span>);</span><br></pre></td></tr></table></figure>
+
 <p>在查到转换结果可能跟地区有关时，还特意设置了语言和转换的格式，但最后发现都无济于事。</p>
 <p>目前发现了四种结果</p>
 <ul>
@@ -387,8 +389,7 @@
 <th>Safari</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Basic support</td>
 <td>(Yes)</td>
 <td>(Yes)</td>
@@ -404,15 +405,14 @@
 <td>15</td>
 <td>未实现</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li>Mobile</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Feature</th>
+<th align="left">Feature</th>
 <th>Android</th>
 <th>Chrome for Android</th>
 <th>Firefox Mobile (Gecko)</th>
@@ -421,9 +421,8 @@
 <th>Safari Mobile</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">Basic support</td>
+<tbody><tr>
+<td align="left">Basic support</td>
 <td>(Yes)</td>
 <td>(Yes)</td>
 <td>(Yes)</td>
@@ -432,7 +431,7 @@
 <td>(Yes)</td>
 </tr>
 <tr>
-<td style="text-align:left"><code>locales</code> and <code>options</code>arguments</td>
+<td align="left"><code>locales</code> and <code>options</code>arguments</td>
 <td>未实现</td>
 <td>26</td>
 <td>未实现<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=864843" target="_blank" rel="noopener">bug 864843</a></td>
@@ -440,10 +439,10 @@
 <td>未实现</td>
 <td>未实现</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>   网上一般是通过正则来把得到时间拆分成年月日时分秒等，由于我这里得到的是标准的 <code>new Date()</code>，所以我决定用 <code>Date.prototype.getFullYear()</code>等方法。</p>
    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> year = <span class="keyword">this</span>.birthday.getFullYear();</span><br><span class="line"><span class="keyword">let</span> month = <span class="keyword">this</span>.birthday.getMonth() + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> day = <span class="keyword">this</span>.birthday.getDate();</span><br><span class="line"><span class="keyword">if</span> (month &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  month = <span class="string">'0'</span> + month; <span class="comment">// 为了表现为 2017-01-01 的格式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (day &lt; <span class="number">10</span>) &#123;</span><br><span class="line">  day = <span class="string">'0'</span> + day;  <span class="comment">// 为了表现为 2017-01-01 的格式</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">this</span>.showBirthday = year + <span class="string">'-'</span> + month + <span class="string">'-'</span> + day;</span><br></pre></td></tr></table></figure>
+
 <p>​    参考文档：</p>
 <ul>
 <li><a href="http://www.jianshu.com/p/4ea9376839e0" target="_blank" rel="noopener">微信ios/Safari中的new Date()格式化坑</a></li>

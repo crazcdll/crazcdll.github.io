@@ -350,6 +350,7 @@
 <p>此处想吐槽。</p>
 <p>现在记录下来，以防以后还要重复这些操作。</p>
 <a id="more"></a>
+
 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
 <li><p><strong>SSH：</strong>为 Secure Shell 的缩写，是一种网络协议，用于计算机之间的加密登录。</p>
 </li>
@@ -363,6 +364,7 @@
 </li>
 <li><p><strong>eval：</strong>eval会对后面的命令行进行两边扫描，如果第一遍扫描后，cmdLine是个普通命令，则执行此命令；如果cmdLine中含有变量的间接引用，则保证间接引用的语义。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> 11 22 33 44</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$4</span>  <span class="comment"># 44</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$<span class="variable">$#</span>"</span>  <span class="comment"># 4，$# 可以输出最后一个参数</span></span><br><span class="line"><span class="built_in">eval</span> <span class="built_in">echo</span> <span class="string">"\$<span class="variable">$#</span>"</span>  <span class="comment"># 44</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h3 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h3><ol>
@@ -384,6 +386,7 @@
 </li>
 <li><p>把 SSH Key 加到 Github 等服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install xclip  <span class="comment"># 安装复制工具，避免复制的时候多空行，空格等</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for Linux</span></span><br><span class="line">xclip -sel clip &lt; ~/.ssh/<span class="string">"your id_rsa name"</span>  <span class="comment"># 需要替换为自己的 key name</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for Windows</span></span><br><span class="line">clip &lt; ~/.ssh/<span class="string">"your id_rsa name"</span>  <span class="comment"># 需要替换为自己的 key name，这里前面的路径也不对，需要替换</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for Mac</span></span><br><span class="line">pbcopy &lt; ~/.ssh/<span class="string">"your id_rsa name"</span>  <span class="comment"># 需要替换为自己的 key name</span></span><br></pre></td></tr></table></figure>
+
 <p>然后在 Github 等服务上<a href="https://github.com/settings/keys" target="_blank" rel="noopener">新建 SSH Key</a> ，粘贴即好。</p>
 </li>
 <li><p>测试是否成功添加</p>
@@ -398,10 +401,13 @@
 <p>这里的 <strong>自动</strong> 指的是，每次启动 <strong>Git Bash</strong> 这个客户端时</p>
 <p>新建文件 <code>~/.profile</code> ，即 <code>/c/Users/XXX/profile</code> ，然后写入如下内容</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">env=~/.ssh/agent.env</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">agent_load_env</span></span> () &#123; <span class="built_in">test</span> -f <span class="string">"<span class="variable">$env</span>"</span> &amp;&amp; . <span class="string">"<span class="variable">$env</span>"</span> &gt;| /dev/null ; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">agent_start</span></span> () &#123;</span><br><span class="line">    (<span class="built_in">umask</span> 077; ssh-agent &gt;| <span class="string">"<span class="variable">$env</span>"</span>)</span><br><span class="line">    . <span class="string">"<span class="variable">$env</span>"</span> &gt;| /dev/null ; &#125;</span><br><span class="line"></span><br><span class="line">agent_load_env</span><br><span class="line"></span><br><span class="line"><span class="comment"># agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2= agent not running</span></span><br><span class="line">agent_run_state=$(ssh-add -l &gt;| /dev/null 2&gt;&amp;1; <span class="built_in">echo</span> $?)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ ! <span class="string">"<span class="variable">$SSH_AUTH_SOCK</span>"</span> ] || [ <span class="variable">$agent_run_state</span> = 2 ]; <span class="keyword">then</span></span><br><span class="line">    agent_start</span><br><span class="line">    ssh-add</span><br><span class="line">    ssh-add ~/.ssh/github  <span class="comment"># 如果自定义了 key 的名字或者路径，则需要写在这里</span></span><br><span class="line">    ssh-add ~/.ssh/coding</span><br><span class="line"><span class="keyword">elif</span> [ <span class="string">"<span class="variable">$SSH_AUTH_SOCK</span>"</span> ] &amp;&amp; [ <span class="variable">$agent_run_state</span> = 1 ]; <span class="keyword">then</span></span><br><span class="line">    ssh-add</span><br><span class="line">    ssh-add ~/.ssh/github  <span class="comment"># 如果自定义了 key 的名字或者路径，则需要写在这里</span></span><br><span class="line">    ssh-add ~/.ssh/coding</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">unset</span> env</span><br></pre></td></tr></table></figure>
+
 <p>在新开 <strong>Git Bash</strong> 时，如果看到如下信息，表示 <strong>ssh-agent</strong> 打开成功，<strong>SSH Key</strong> 加载成功。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Identity added: /c/Users/XXX/.ssh/id_rsa (/c/Users/XXX/.ssh/id_rsa)</span><br><span class="line">Identity added: /c/Users/XXX/.ssh/github (/c/Users/XXX/.ssh/github)</span><br><span class="line">Identity added: /c/Users/XXX/.ssh/coding (/c/Users/XXX/.ssh/coding)</span><br><span class="line"></span><br><span class="line">XXX@XXX MINGW64 /d/Program Files/cmder</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
 <p>然后，可以通过 <code>ssh -T</code> 命令才测试一下，看到如下信息表示添加测试通过。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi XXX! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">$ ssh -T git@git.coding.net</span></span><br><span class="line"><span class="string">Warning: Permanently added the RSA host key for IP address '</span>123.XX.XX.XX<span class="string">' to the list of known hosts.</span></span><br><span class="line"><span class="string">Coding 提示: Hello XXX, You'</span>ve connected to Coding.net via SSH. This is a personal key.</span><br><span class="line">XXX，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</span><br></pre></td></tr></table></figure>
+
 <p>​</p>
 <p><strong>注意：</strong></p>
 <ol>
@@ -411,7 +417,7 @@
 </li>
 </ol>
 <h3 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h3><ul>
-<li style="list-style: none"><input type="checkbox" checked> 研究在 Windows 上怎么用</li>
+<li><input checked disabled type="checkbox"> 研究在 Windows 上怎么用</li>
 </ul>
 <h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><ul>
 <li><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">SSH原理与运用（一）：远程登录</a></li>
@@ -422,7 +428,7 @@
 <li><a href="http://yijiebuyi.com/blog/4b5c272e7058cb331098250c8e98eb3e.html" target="_blank" rel="noopener">ssh-agent 与 ssh 的区别</a></li>
 <li><a href="http://yysfire.github.io/linux/using-ssh-agent-with-ssh.html" target="_blank" rel="noopener">使用ssh和ssh-agent实现“无密码”登录远程机器</a></li>
 <li><a href="http://man.linuxde.net/ssh-add" target="_blank" rel="noopener">ssh-add命令</a></li>
-<li><a href="https://wiki.archlinux.org/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">SSH keys (简体中文)</a>)</li>
+<li><a href="https://wiki.archlinux.org/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" target="_blank" rel="noopener">SSH keys (简体中文)</a></li>
 <li><a href="https://segmentfault.com/q/1010000000835302" target="_blank" rel="noopener">是否必须每次添加ssh-add</a></li>
 <li><a href="http://blog.csdn.net/damotiansheng/article/details/39735441" target="_blank" rel="noopener">linux shell中的eval命令</a></li>
 <li><a href="http://linux.vbird.org/linux_basic/0320bash.php" target="_blank" rel="noopener">第十章、認識與學習BASH</a></li>

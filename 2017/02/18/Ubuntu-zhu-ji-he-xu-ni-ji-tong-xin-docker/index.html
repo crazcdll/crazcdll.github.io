@@ -356,6 +356,7 @@
         <p>近些天随着在公司上手新的项目，需要学的东西也越来越多，同时相关配套服务上，也有学习。比如 Docker。</p>
 <p>周末想着在家搭建一套，遂记录下来。</p>
 <a id="more"></a>
+
 <hr>
 <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ol>
 <li>数据库用的 MongoDB，搭建在虚拟机中的 Docker 中</li>
@@ -384,6 +385,7 @@
 <li>修改虚拟机的 IP 为固定 IP，和主机在一个网段内，注意 <strong>网关</strong> 和 <strong>DNS</strong> 的配置，用 Ubuntu 的 NetworkManager 方便快捷。记得重启 NetworkManager 。测试网络是否可用。</li>
 </ol>
 <h5 id="关闭-Ubuntu-防火墙"><a href="#关闭-Ubuntu-防火墙" class="headerlink" title="关闭 Ubuntu 防火墙"></a>关闭 Ubuntu 防火墙</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw <span class="built_in">disable</span></span><br><span class="line"><span class="comment"># 查看防火墙状态</span></span><br><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
+
 <h5 id="设置-Windows-防火墙"><a href="#设置-Windows-防火墙" class="headerlink" title="设置 Windows 防火墙"></a>设置 Windows 防火墙</h5><ol>
 <li><p>这时候应该是可以从 主机 ping 通 虚拟机了，虚拟机可能 ping 不通 主机</p>
 </li>
@@ -400,19 +402,23 @@
 <li>由于对 Docker 只是粗浅的了解，很多坑还没踩，一开始 run Mongo 的时候总不对，最后感谢小伙伴马同学帮忙搞定，正确的命令如下：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name <span class="built_in">test</span>-mongo -d -p 27017:27017 mongo</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="3">
 <li>这样就把 mongo 加载到了本机 27017 端口上，不写端口映射的话，可能会连接不上。之后每次只要运行如下命令即刻启动 Docker 下的 mongo</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start <span class="built_in">test</span>-mongo</span><br></pre></td></tr></table></figure>
+
 <h4 id="python-virtualenv-环境搭建"><a href="#python-virtualenv-环境搭建" class="headerlink" title="python virtualenv 环境搭建"></a>python virtualenv 环境搭建</h4><ol>
 <li>根据官方文档来即刻，注意 python 版本，<a href="http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html" target="_blank" rel="noopener">Python 指南-虚拟环境</a> </li>
 <li>搭建完后，注意先安装所需要的依赖，这步很重要，前提是换 pip 源，记得要添加 trust-host，免得报错。</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd ~</span></span><br><span class="line"><span class="comment"># mkdir .pip</span></span><br><span class="line"><span class="comment"># touch pip.conf</span></span><br><span class="line"><span class="comment"># vi pip.conf</span></span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.douban.com/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=pypi.douban.com</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="3">
 <li>之后启动 python 之前，先修改 mongo 数据库的位置，在项目根目录下 .env 文件中</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+
 <h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ol>
 <li>先在本地测试是否成功启动 web 服务，确认后再在主机测试。</li>
 <li>如果本地无法打开，很有可能是 mongo 没有配置好，注意看 python 的log，如果是主机打不开，记得多重启。。</li>
@@ -427,11 +433,11 @@
 <p><a href="http://www.arthurtoday.com/2013/12/ubuntu-ufw-add-firewall-rules.html" target="_blank" rel="noopener">Ubuntu 用 ufw 指令快速啟用和設定防火牆</a></p>
 <p><a href="http://graybull.is-programmer.com/posts/36941.html" target="_blank" rel="noopener">从外网访问VMware虚拟机的Web服务</a></p>
 <hr>
-<h4 style="text-align:center">mark… </h4>
+<h4 style="text-align:center">mark... </h4>
 
 <h4 style="text-align:center">such a day</h4>
 
-<h4 style="text-align:center">引用看<strong>《人类简史》</strong>得到的一个<strong>妙论</strong>：推动人类进步的，一切都TM是想象。。。 </h4>
+<h4 style="text-align:center">引用看**《人类简史》**得到的一个**妙论**：推动人类进步的，一切都TM是想象。。。 </h4>
 
 <h5 style="text-align:right">二零一七年元月二十三日·孤夜</h5>
 
@@ -565,7 +571,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ubuntu-虚拟环境的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu 虚拟环境的搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟机开启桥接模式"><span class="nav-number">2.2.</span> <span class="nav-text">虚拟机开启桥接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#给-物理网卡-安装-VMware-Bridge-Protocol"><span class="nav-number">2.2.1.</span> <span class="nav-text">给 物理网卡 安装 VMware Bridge Protocol</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关闭-Ubuntu-防火墙"><span class="nav-number">2.2.2.</span> <span class="nav-text">关闭 Ubuntu 防火墙</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置-Windows-防火墙"><span class="nav-number">2.2.3.</span> <span class="nav-text">设置 Windows 防火墙</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-搭建"><span class="nav-number">2.3.</span> <span class="nav-text">MongoDB 搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-virtualenv-环境搭建"><span class="nav-number">2.4.</span> <span class="nav-text">python virtualenv 环境搭建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来要实现的"><span class="nav-number">4.</span> <span class="nav-text">接下来要实现的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text">mark… </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.2.</span> <span class="nav-text">such a day</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.3.</span> <span class="nav-text">引用看《人类简史》得到的一个妙论：推动人类进步的，一切都TM是想象。。。 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">4.3.1.</span> <span class="nav-text">二零一七年元月二十三日·孤夜</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ubuntu-虚拟环境的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu 虚拟环境的搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟机开启桥接模式"><span class="nav-number">2.2.</span> <span class="nav-text">虚拟机开启桥接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#给-物理网卡-安装-VMware-Bridge-Protocol"><span class="nav-number">2.2.1.</span> <span class="nav-text">给 物理网卡 安装 VMware Bridge Protocol</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关闭-Ubuntu-防火墙"><span class="nav-number">2.2.2.</span> <span class="nav-text">关闭 Ubuntu 防火墙</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置-Windows-防火墙"><span class="nav-number">2.2.3.</span> <span class="nav-text">设置 Windows 防火墙</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-搭建"><span class="nav-number">2.3.</span> <span class="nav-text">MongoDB 搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-virtualenv-环境搭建"><span class="nav-number">2.4.</span> <span class="nav-text">python virtualenv 环境搭建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来要实现的"><span class="nav-number">4.</span> <span class="nav-text">接下来要实现的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text">mark... </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.2.</span> <span class="nav-text">such a day</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.3.</span> <span class="nav-text">引用看**《人类简史》**得到的一个**妙论**：推动人类进步的，一切都TM是想象。。。 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">4.3.1.</span> <span class="nav-text">二零一七年元月二十三日·孤夜</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->

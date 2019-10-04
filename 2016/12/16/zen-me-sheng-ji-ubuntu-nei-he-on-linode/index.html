@@ -350,12 +350,14 @@
         <p>由于 Linode 后台可以选择启动的内核，在找到一个教程成功更新内核后，我很强烈的怀疑跟这里有关系，先把可以用的方式说一下。</p>
 <p>更新到的内核是 4.9.0-999-generic，ubuntu 版本 16.10</p>
 <a id="more"></a>
+
 <ol>
 <li><p>下载新内核</p>
 <p> <a href="http://kernel.ubuntu.com/~kernel-ppa/mainline/daily/current/" target="_blank" rel="noopener">Ubuntu 每日内核更新站点</a></p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mkdir tmp_kernel  // 创建一个临时目录</span><br><span class="line">cd tmp_kernel</span><br><span class="line"></span><br><span class="line"># 一个是linux-headers-xxxxx_amd64.deb结构命名的， 如果你是32位机器就选linux-headers-xxxxx_i386.deb， 下同</span><br><span class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/daily/current/linux-headers-4.9.0-999-generic_4.9.0-999.201612152101_amd64.deb</span><br><span class="line"># 这个是 linux-headers-xxxxx_all.deb结构命名的</span><br><span class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/daily/current/linux-headers-4.9.0-999_4.9.0-999.201612152101_all.deb</span><br><span class="line"># 这个是linux-image-xxxxx-_amd64.deb结构命名的</span><br><span class="line">wget http://kernel.ubuntu.com/~kernel-ppa/mainline/daily/current/linux-image-4.9.0-999-generic_4.9.0-999.201612152101_amd64.deb</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>以<em> -lowlatency- </em> 结构命名的内核，=， 可以 <a href="http://askubuntu.com/questions/126664/why-to-choose-low-latency-kernel-over-generic-or-realtime-ones" target="_blank" rel="noopener">看这里</a> , 大概是像录音设备之类的需要这种低延迟的内核？这个内核更费电， 对于笔记本或台式机还是用不着的。</p>
+<p>以* -lowlatency- * 结构命名的内核，=， 可以 <a href="http://askubuntu.com/questions/126664/why-to-choose-low-latency-kernel-over-generic-or-realtime-ones" target="_blank" rel="noopener">看这里</a> , 大概是像录音设备之类的需要这种低延迟的内核？这个内核更费电， 对于笔记本或台式机还是用不着的。</p>
 </blockquote>
 </li>
 <li><p>安装内核</p>
@@ -365,10 +367,11 @@
 <p> 其实，用惯了 Windows 和 Mac 的，对这种升级方式很不理解。。。虽然很开放，但是很蛋疼。</p>
 <ol>
 <li>命令 uname -a 查看当前系统内核，确实不是自己想要的。</li>
-<li><p>安装grub2组件  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install linux-image-virtual grub2</span><br></pre></td></tr></table></figure>
-<p><strong>注意！远程窗口会显示Grub安装界面，要求你选择grub安装位置，你直接选择不安装即可。</strong></p>
+<li>安装grub2组件  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install linux-image-virtual grub2</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+<p> <strong>注意！远程窗口会显示Grub安装界面，要求你选择grub安装位置，你直接选择不安装即可。</strong></p>
+<ol start="3">
 <li><p>查看默认系统内核版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls /boot/vmlinuz*</span><br></pre></td></tr></table></figure>
 </li>

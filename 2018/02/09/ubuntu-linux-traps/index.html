@@ -347,6 +347,7 @@
       
         <p>在用 Linux，用 Ubuntu 的过程中，时不时会遇到一些坑，一些 traps，往往是花了很多时间才解决掉，而且很多时候有可能就是单纯的解决了，问题后面的原因可能没有搞清楚。在此先记录下来，争取能够慢慢理解。<br>个人觉得学习 Linux 不会一蹴而就，是一个量变到质变的过程。</p>
 <a id="more"></a>
+
 <hr>
 <p>制定一个格式，方便书写</p>
 <ol>
@@ -370,7 +371,9 @@
 <p>在打开的时候，程序可能会自己询问是否给它 <strong>可执行</strong> 的权限，如果不询问的话，执行 <code>sudo chmod a+u XXX</code> 就行了，或者在 Ubuntu 下右击赋予权限也行。</p>
 <p>但是后来在我移动 <strong>AppImage</strong> 源文件到新的位置后，我发现不能用了，系统以为我卸载了这个程序，但是并没有删除掉它生成的一些配置文件，比如 <strong>icon</strong> 等，以至于在我再次启动程序后，发现 <strong>没有正确的显示图标</strong>，以及 <strong>在 Ubuntu 的 Dash 中找不到 lepton 了</strong>。</p>
 <h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>一开始我先尝试删除源文件，重启电脑，重新下载，再安装，发现并没有解决问题。</p>
-<p>然后在网上搜索，发现这个 <strong>AppImage</strong> 在至少以下两个目录新创建了文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/home/<span class="variable">$USERNAME</span>/.config/Lepton  <span class="comment"># 这个目录中是一些配置文件</span></span><br><span class="line"></span><br><span class="line">/home/<span class="variable">$USERNAME</span>/.<span class="built_in">local</span>/share/applications  <span class="comment"># 这个目录中是一个桌面文件 appimagekit-lepton.desktop</span></span><br></pre></td></tr></table></figure></p>
+<p>然后在网上搜索，发现这个 <strong>AppImage</strong> 在至少以下两个目录新创建了文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/home/<span class="variable">$USERNAME</span>/.config/Lepton  <span class="comment"># 这个目录中是一些配置文件</span></span><br><span class="line"></span><br><span class="line">/home/<span class="variable">$USERNAME</span>/.<span class="built_in">local</span>/share/applications  <span class="comment"># 这个目录中是一个桌面文件 appimagekit-lepton.desktop</span></span><br></pre></td></tr></table></figure>
+
 <p>然后我就把第一个目录清空，删除了第二个文件，再次启动 <strong>AppImage</strong> 文件发现可以用了。</p>
 <h4 id="一些思考"><a href="#一些思考" class="headerlink" title="一些思考"></a>一些思考</h4><ol>
 <li>一般程序都是需要往系统中写入一些自己的配置信息的，Mac，Windows，Linux 都不例外，所以这种自己可执行的程序，也一样，我最开始的思路是对的，只是没有找全，以及没有联想到 <strong>.desktop</strong> 文件的事情</li>

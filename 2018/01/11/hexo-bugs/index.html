@@ -347,15 +347,19 @@
       
         <p>记录使用 Hexo 时遇到的 bugs 及解决办法。</p>
 <a id="more"></a>
+
 <ol>
 <li><p>运行 <code>hexo s</code> 后报错</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: watch /home/XXX/coder/blog/source/ ENOSPC</span></span><br><span class="line"><span class="string">    at _errnoException (util.js:1022:11)</span></span><br><span class="line"><span class="string">    at FSWatcher.start (fs.js:1374:19)</span></span><br><span class="line"><span class="string">    at Object.fs.watch (fs.js:1400:11)</span></span><br><span class="line"><span class="string">    at createFsWatchInstance (/home/XXX/coder/blog/node_modules/chokidar/lib/nodefs-handler.js:37:15)</span></span><br><span class="line"><span class="string">    at setFsWatchListener (/home/XXX/coder/blog/node_modules/chokidar/lib/nodefs-handler.js:80:15)</span></span><br><span class="line"><span class="string">    at FSWatcher.NodeFsHandler._watchWithNodeFs (/home/XXX/coder/blog/node_modules/chokidar/lib/nodefs-handler.js:228:14)</span></span><br><span class="line"><span class="string">    at FSWatcher.NodeFsHandler._handleDir (/home/XXX/coder/blog/node_modules/chokidar/lib/nodefs-handler.js:407:19)</span></span><br><span class="line"><span class="string">    at FSWatcher.&lt;anonymous&gt; (/home/XXX/coder/blog/node_modules/chokidar/lib/nodefs-handler.js:455:19)</span></span><br><span class="line"><span class="string">    at FSWatcher.&lt;anonymous&gt; (/home/XXX/coder/blog/node_modules/chokidar/lib/nodefs-handler.js:460:16)</span></span><br><span class="line"><span class="string">    at FSReqWrap.oncomplete (fs.js:153:5)</span></span><br></pre></td></tr></table></figure>
+
 <p>根据提示，查看 <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">Troubleshooting</a> 后，有如下一条</p>
 <p><strong>ENOSPC Error (Linux)</strong></p>
 <p>Sometimes when running the command <code>$ hexo server</code> it returns an error:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: watch ENOSPC ...</span><br></pre></td></tr></table></figure>
+
 <p>It can be fixed by running <code>$ npm dedupe</code> or, if that doesn’t help, try the following in the Linux console:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf &amp;&amp; sudo sysctl -p</span><br></pre></td></tr></table></figure>
+
 <p>This will increase the limit for the number of files you can watch.</p>
 <p>运行第一条命令后依然报错，运行第二条命令后就好了。原因上面说了，watch 的文件太多了，超过阈值了。</p>
 </li>
