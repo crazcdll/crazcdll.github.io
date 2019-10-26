@@ -252,6 +252,254 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/own-python-pip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zcdll">
+      <meta itemprop="description" content="keep going">
+      <meta itemprop="image" content="/images/lianmeng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zcdll's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/01/29/own-python-pip/" class="post-title-link" itemprop="url">给非 root 用户安装自己的 Python3 和 pip3</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-29 11:39:36" itemprop="dateCreated datePublished" datetime="2018-01-29T11:39:36+08:00">2018-01-29</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-11-17 04:01:35" itemprop="dateModified" datetime="2018-11-17T04:01:35+08:00">2018-11-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/2018/01/29/own-python-pip/" class="post-meta-item leancloud_visitors" data-flag-title="给非 root 用户安装自己的 Python3 和 pip3" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/01/29/own-python-pip/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018/01/29/own-python-pip/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>需要在一台服务器上部署一套爬虫，用 Python 的 <a href="https://scrapy.org/" target="_blank" rel="noopener">Scrapy</a> 框架写的。由于不想跟系统的 Python 包混用，所以需要自己安装一套 Python 包。开发的时候用的是 <a href="https://github.com/pypa/pipenv" target="_blank" rel="noopener">pipenv</a> 来管理包，在服务器上部署之后可以使用，但是因为还需要用 <strong>crontab</strong> 来写一个定时任务每天运行一次爬虫，在写定时任务的时候发现，运行 <code>pipenv shell</code> 后不能继续执行 <strong>.sh 文件</strong> 中下一行的命令，发现是切换了 <strong>bash</strong> ，在 <code>exit</code> 退出 <strong>pipenv</strong> 后会继续运行 <strong>.sh 文件</strong> 中下一行的命令，所以只得舍弃 <strong>pipenv</strong>。</p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2018/01/29/own-python-pip/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/docker-tutorial-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zcdll">
+      <meta itemprop="description" content="keep going">
+      <meta itemprop="image" content="/images/lianmeng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zcdll's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2018/01/28/docker-tutorial-3/" class="post-title-link" itemprop="url">Docker 学习笔记（3）</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2018-01-28 22:06:30" itemprop="dateCreated datePublished" datetime="2018-01-28T22:06:30+08:00">2018-01-28</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-11-17 04:01:35" itemprop="dateModified" datetime="2018-11-17T04:01:35+08:00">2018-11-17</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/2018/01/28/docker-tutorial-3/" class="post-meta-item leancloud_visitors" data-flag-title="Docker 学习笔记（3）" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/01/28/docker-tutorial-3/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018/01/28/docker-tutorial-3/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="操作-Docker-容器"><a href="#操作-Docker-容器" class="headerlink" title="操作 Docker 容器"></a>操作 Docker 容器</h3><p>简单的说，容器是独立运行的一个或一组应用，以及它们的运行态环境。对应的，虚拟机可以理解为模拟运行的一整套操作系统（提供了运行态环境和其他系统环境）和跑在上面的应用。</p>
+          <!--noindex-->
+          
+            <div class="post-button">
+              <a class="btn" href="/2018/01/28/docker-tutorial-3/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/docker-tutorial-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1252,261 +1500,6 @@
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/hexo@1-0-4&next@6-0-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zcdll">
-      <meta itemprop="description" content="keep going">
-      <meta itemprop="image" content="/images/lianmeng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zcdll's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2018/01/09/hexo@1-0-4&next@6-0-0/" class="post-title-link" itemprop="url">最新版 Hexo @3.4.4 和 Next 主题 @6.0.0 安装和更新教程</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2018-01-09 09:41:02" itemprop="dateCreated datePublished" datetime="2018-01-09T09:41:02+08:00">2018-01-09</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-11-17 04:01:35" itemprop="dateModified" datetime="2018-11-17T04:01:35+08:00">2018-11-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/博客/" itemprop="url" rel="index"><span itemprop="name">博客</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span id="/2018/01/09/hexo@1-0-4&next@6-0-0/" class="post-meta-item leancloud_visitors" data-flag-title="最新版 Hexo @3.4.4 和 Next 主题 @6.0.0 安装和更新教程" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/01/09/hexo@1-0-4&next@6-0-0/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018/01/09/hexo@1-0-4&next@6-0-0/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>之前用的 <a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">Next 主题</a> 是 5.0.0 版本，一直没有更新过，最近看到 Next 出了 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">6.0.0 版本</a>，想要更新一下，然后 Hexo 也一直没更新过，所以就一起更新了。</p>
-<p>这里需要注意的是，Next 作者在 6.0.0 大版本之后，更改了仓库地址，新地址在 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">theme-next</a> 下。同时也启用了新 <a href="https://theme-next.org/" target="_blank" rel="noopener">官网</a> ，不过要在 <strong>2018年1月17日</strong> 才正式上线，现在只有一个倒计时的页面。</p>
-<p>因为考虑到这次是大版本更新，以及我之前的 Next 主题的目录中 <code>.git</code> 中的仓库地址变成了本地，担心如果改过来，可能会有未知的问题，还有就是想重新配置一遍 Hexo + Next，所以决定重新安装 Hexo + Next。</p>
-<p>如果不打算重新安装的话，在 Next 的目录中运行 <code>git pull</code> 就可以更新了，如果报错了可以针对性的解决。</p>
-<p>下面记录过程。</p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2018/01/09/hexo@1-0-4&next@6-0-0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/08/xpath-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zcdll">
-      <meta itemprop="description" content="keep going">
-      <meta itemprop="image" content="/images/lianmeng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zcdll's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2018/01/08/xpath-note/" class="post-title-link" itemprop="url">XPath 学习笔记</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2018-01-08 10:50:27" itemprop="dateCreated datePublished" datetime="2018-01-08T10:50:27+08:00">2018-01-08</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-11-17 04:01:35" itemprop="dateModified" datetime="2018-11-17T04:01:35+08:00">2018-11-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span id="/2018/01/08/xpath-note/" class="post-meta-item leancloud_visitors" data-flag-title="XPath 学习笔记" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2018/01/08/xpath-note/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2018/01/08/xpath-note/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p><strong>XPath 是一门在 XML 文档中查找信息的语言。XPath 用于在 XML 文档中通过元素和属性进行导航。</strong></p>
-<p>XPath 于 1999 年 11 月 16 日 成为 W3C 标准。</p>
-<p>XPath 被设计为供 XSLT、XPointer 以及其他 XML 解析软件使用。</p>
-<p>XPath 表达式可返回节点集、字符串、逻辑值以及数字。</p>
-          <!--noindex-->
-          
-            <div class="post-button">
-              <a class="btn" href="/2018/01/08/xpath-note/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -1558,7 +1551,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

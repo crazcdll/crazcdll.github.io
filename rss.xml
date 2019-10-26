@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-04T14:53:10.381Z</updated>
+  <updated>2019-10-26T10:28:21.190Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,58 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>解决 nvm install N/A</title>
+    <link href="http://yoursite.com/2019/10/26/nvm-install-na/"/>
+    <id>http://yoursite.com/2019/10/26/nvm-install-na/</id>
+    <published>2019-10-26T10:24:06.000Z</published>
+    <updated>2019-10-26T10:28:21.190Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过 nvm 升级 node 版本时，有时候会报错</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">N/A: version &quot;N/A&quot; is not yet installed.</span><br><span class="line"></span><br><span class="line">You need to run &quot;nvm install N/A&quot; to install it before using it.</span><br></pre></td></tr></table></figure><a id="more"></a><p>解决办法：运行命令 <code>nvm alias default node</code></p><p>如果仅仅按照提示，运行 <code>nvm use xxx</code> 暂时会好了，但是在重启电脑或重启 terminal 后问题依旧。</p><p>参考链接： <a href="https://stackoverflow.com/questions/49449719/nvm-n-a-version-n-a-n-a-is-not-yet-installed" target="_blank" rel="noopener">nvm: N/A: version “N/A -&gt; N/A” is not yet installed</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;通过 nvm 升级 node 版本时，有时候会报错&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;N/A: version &amp;quot;N/A&amp;quot; is not yet installed.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;You need to run &amp;quot;nvm install N/A&amp;quot; to install it before using it.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-upgrade-to-3.9.0</title>
+    <link href="http://yoursite.com/2019/10/05/hexo-upgrade-to-3-9-0/"/>
+    <id>http://yoursite.com/2019/10/05/hexo-upgrade-to-3-9-0/</id>
+    <published>2019-10-04T16:15:07.000Z</published>
+    <updated>2019-10-08T01:55:47.555Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ol><li><a href="https://leaferx.online/2018/02/11/lc-security/" target="_blank" rel="noopener">Leancloud访客统计插件重大安全漏洞修复指南</a></li><li><a href="https://github.com/theme-next/hexo-theme-next/issues/569" target="_blank" rel="noopener">首页”阅读次数”后不显示数字 [solved] </a></li><li><a href="https://yunhao.space/2018/06/27/hexo-leancloud-plugin-installation-tutor/" target="_blank" rel="noopener">Hexo NexT 主题 LeanCloud 插件安装教程</a></li><li><a href="https://www.alankeene.com/2018/0412/next-problems.html" target="_blank" rel="noopener">用 hexo 搭建博客踩过的坑</a></li><li><a href="https://blog.dlzhang.com/posts/3720dafc/" target="_blank" rel="noopener">Hexo NexT 博客增加瀑布流相册页面</a></li><li><a href="https://bjtu-hxs.github.io/2018/06/12/leancloud-config/" target="_blank" rel="noopener">Hexo博客Next主题添加统计文章阅读量功能</a></li><li><a href="http://www.coldcrack.me/2018/07/18/Next_Gittalk/" target="_blank" rel="noopener">Hexo Next主题集成Gittalk</a></li><li><a href="https://cjjkkk.github.io/gitalk/" target="_blank" rel="noopener">使用gittalk实现hexo博客评论功能</a></li><li><a href="https://gythialy.github.io/deploy-hexo-to-github-pages-via-github-actions/" target="_blank" rel="noopener">通过 GitHub Actions 自动部署 Hexo</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;h3 id=&quot;参考链接&quot;&gt;&lt;a href=&quot;#参考链接&quot; class=&quot;headerlink&quot; title=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://leaferx.online/2018/
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>配置 VSCode 编码环境</title>
     <link href="http://yoursite.com/2019/09/27/vscode-init/"/>
     <id>http://yoursite.com/2019/09/27/vscode-init/</id>
     <published>2019-09-27T06:30:15.000Z</published>
-    <updated>2019-10-04T14:53:10.381Z</updated>
+    <updated>2019-10-10T06:56:05.326Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>一直使用 WebStorm 作为自己的 JavaScript 编码 IDE，用了两三年了，很不错。经过很长时间的打磨，各种配置，插件，快捷键，工具都得心应手了。也用 PhpStorm 写过 Laravel，用 PyCharm 写过 Flask，迁移配置文件后很快就上手了。</p><p>前一段时间开始学习 Flutter，发现官方推荐的 IDE 是  或者 IDEA 后很高兴，就顺理成章的用起了 Android Studio，但是打开 Android Studio 后，我的 Mac 就开始风扇狂转，声音很大，很不爽。。。</p><p>看到 Flutter 推荐的编辑器还有 VSCode，索性就开始配置一把。</p><p>VSCode 刚出来的时候，就想要配置好自己的环境，期间还看了好多文章，听了好几期播客，但一直就搁置了。。。</p><a id="more"></a><hr><h4 id="修改记录"><a href="#修改记录" class="headerlink" title="修改记录"></a>修改记录</h4><ul><li><p>第一次更新：2019年9月27日</p><p>第一版</p></li></ul><hr><p>VSCode 基本是开箱即用的，虽然打开速度没有 Sublime 快，但是带了不少功能，基本的语法高亮啥的。</p><hr><h3 id="本地语言"><a href="#本地语言" class="headerlink" title="本地语言"></a>本地语言</h3><p>安装完后，从插件中找到相应的语言包，中文(简体)，然后安装，重启就好了。</p><p>但是可能存在部分插件不支持中文的情况。</p><h3 id="修改配置-amp-自定义"><a href="#修改配置-amp-自定义" class="headerlink" title="修改配置 &amp; 自定义"></a>修改配置 &amp; 自定义</h3><ol><li>主题，字体，自动保存</li><li>代码片段 snippets</li><li>是否显示迷你地图</li><li>行最大字符数 &amp; 自动换行</li></ol><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol><li><p>工作区</p><p>我理解的工作区好比是一个大项目，然后其中可能包含好多子项目，例如前端项目，后端项目，数据库配置，Docker 里面的 Dockerfile 等。</p><p>所以在开发一个项目的时候，可以打开一个 工作区，然后打开全部相关的目录，保存为一个单独的工作区。</p></li></ol><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ol><li>Material Theme &amp; Material Icon Theme</li><li>Auto Rename Tag</li><li>Auto Close Tag</li><li>Live Server</li><li>Better Comments</li><li>CSS Peek</li><li>Sass</li><li>Live Sass Compiler</li><li>Prettier</li><li>TODO Highlight</li><li>Bracket Pair Colorizer 2</li><li>Settings Sync</li><li>ESLint</li><li>Color Highlight</li><li>Auto Import</li><li>IntelliSense for CSS class names in HTML</li><li>GitLens</li><li>Git History</li><li>Git Project Manager</li><li>File Utils</li><li>Debugger for Chrome</li><li>TypeScript Hero</li><li>WakaTime</li><li>Vetur —— VS Code 下面的 Vue 工具</li><li>JavaScript (ES6) code snippets</li><li>ES7 React/Redux/GraphQL/React-Native snippets</li><li>Document This</li><li>Code Spell Checker</li></ol><h3 id="其它工具"><a href="#其它工具" class="headerlink" title="其它工具"></a>其它工具</h3><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><table><thead><tr><th align="left">命令</th><th>描述</th></tr></thead><tbody><tr><td align="left">Command + Shift + P</td><td>命令面板，算是一个入口</td></tr><tr><td align="left">Option(Alt) + Shift + F</td><td>格式化文档</td></tr><tr><td align="left">Command + P</td><td>打开文件</td></tr><tr><td align="left">Command + Shift + F</td><td>搜索内容</td></tr><tr><td align="left">Ctrl + Alt + N</td><td>Code Runner</td></tr><tr><td align="left">Shift + Alt + U</td><td>保存配置到 Gist</td></tr><tr><td align="left">Ctrl + Alt + D 两次</td><td>快速添加注释</td></tr><tr><td align="left">Shift + Command + 4</td><td>删除行</td></tr><tr><td align="left">Shift + Alt + Up</td><td>向上复制行</td></tr><tr><td align="left">Shift + Ctrl + Command + D</td><td>向下复制行</td></tr><tr><td align="left">Shift + Command + 6</td><td>新建文件</td></tr><tr><td align="left">Shift + Command + 7</td><td>新建目录</td></tr><tr><td align="left">Alt+Up/Down</td><td>移动当前行</td></tr><tr><td align="left">Shift + Command + O</td><td>转到文件中的符号</td></tr><tr><td align="left">Command + T</td><td>转到工作区中的符号</td></tr><tr><td align="left">Ctrl + G</td><td>跳到指定行</td></tr><tr><td align="left">Comand + Shift + M</td><td>显示问题面板</td></tr><tr><td align="left">Comand + Shift + U</td><td>显示输出面板</td></tr><tr><td align="left">Comand + Shift + Y</td><td>显示调试控制台</td></tr><tr><td align="left">Ctrl + `</td><td>显示终端</td></tr><tr><td align="left">Command + E</td><td>打开最近的文件</td></tr><tr><td align="left">Command + K Command + S</td><td>打开快捷键设置窗口</td></tr><tr><td align="left">Command + Enter</td><td>在下面插入行</td></tr><tr><td align="left">Shift + Command + Enter</td><td>在上面插入行</td></tr><tr><td align="left">Shift + Command + L</td><td>选择所有匹配项</td></tr><tr><td align="left">Command + D</td><td>追加选择下一个匹配项</td></tr><tr><td align="left">Command + I</td><td>增长选择</td></tr><tr><td align="left">Shift + Ctrl + Command + Right</td><td>扩展选择</td></tr><tr><td align="left">Shift + Ctrl + Command + Left</td><td>收起选择</td></tr><tr><td align="left">Alt + Shift + F</td><td>格式化代码</td></tr><tr><td align="left">Ctrl + P</td><td>向上移动光标</td></tr><tr><td align="left">Ctrl + N</td><td>向下移动光标</td></tr><tr><td align="left">Ctrl + B</td><td>向左移动光标</td></tr><tr><td align="left">Ctrl + F</td><td>向右移动光标</td></tr></tbody></table><hr><h3 id="与-WebStorm-不同点"><a href="#与-WebStorm-不同点" class="headerlink" title="与 WebStorm 不同点"></a>与 WebStorm 不同点</h3><ol><li>同一个功能，只支持一个快捷键</li><li>没找到怎么一键关闭所有面板</li><li>默认 <strong>双击</strong> 才能打开一个文件，单击只是在浏览</li></ol><hr><h3 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h3><ol><li>zsh 图形显示的问题</li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>一直使用 WebStorm 作为自己的 JavaScript 编码 IDE，用了两三年了，很不错。经过很长时间的打磨，各种配置，插件，快捷键，工具都得心应手了。也用 PhpStorm 写过 Laravel，用 PyCharm 写过 Flask，迁移配置文件后很快就上手了。</p><p>前一段时间开始学习 Flutter，发现官方推荐的 IDE 是  或者 IDEA 后很高兴，就顺理成章的用起了 Android Studio，但是打开 Android Studio 后，我的 Mac 就开始风扇狂转，声音很大，很不爽。。。</p><p>看到 Flutter 推荐的编辑器还有 VSCode，索性就开始配置一把。</p><p>VSCode 刚出来的时候，就想要配置好自己的环境，期间还看了好多文章，听了好几期播客，但一直就搁置了。。。</p><a id="more"></a><hr><h4 id="修改记录"><a href="#修改记录" class="headerlink" title="修改记录"></a>修改记录</h4><ul><li><p>第一次更新：2019年9月27日</p><p>第一版</p></li></ul><hr><p>VSCode 基本是开箱即用的，虽然打开速度没有 Sublime 快，但是带了不少功能，基本的语法高亮啥的。</p><hr><h3 id="本地语言"><a href="#本地语言" class="headerlink" title="本地语言"></a>本地语言</h3><p>安装完后，从插件中找到相应的语言包，中文(简体)，然后安装，重启就好了。</p><p>但是可能存在部分插件不支持中文的情况。</p><h3 id="修改配置-amp-自定义"><a href="#修改配置-amp-自定义" class="headerlink" title="修改配置 &amp; 自定义"></a>修改配置 &amp; 自定义</h3><ol><li>主题，字体，自动保存</li><li>代码片段 snippets</li><li>是否显示迷你地图</li><li>行最大字符数 &amp; 自动换行</li></ol><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol><li><p>工作区</p><p>我理解的工作区好比是一个大项目，然后其中可能包含好多子项目，例如前端项目，后端项目，数据库配置，Docker 里面的 Dockerfile 等。</p><p>所以在开发一个项目的时候，可以打开一个 工作区，然后打开全部相关的目录，保存为一个单独的工作区。</p></li></ol><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><ol><li>Material Theme &amp; Material Icon Theme</li><li>Auto Rename Tag</li><li>Auto Close Tag</li><li>Live Server</li><li>Better Comments</li><li>CSS Peek</li><li>Sass</li><li>Live Sass Compiler</li><li>Prettier</li><li>TODO Highlight</li><li>Bracket Pair Colorizer 2</li><li>Settings Sync</li><li>ESLint</li><li>Color Highlight</li><li>Auto Import</li><li>IntelliSense for CSS class names in HTML</li><li>GitLens</li><li>Git History</li><li>Git Project Manager</li><li>File Utils</li><li>Debugger for Chrome</li><li>TypeScript Hero</li><li>WakaTime</li><li>Vetur —— VS Code 下面的 Vue 工具</li><li>JavaScript (ES6) code snippets</li><li>ES7 React/Redux/GraphQL/React-Native snippets</li><li>Document This</li><li>Code Spell Checker</li></ol><h3 id="其它工具"><a href="#其它工具" class="headerlink" title="其它工具"></a>其它工具</h3><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><table><thead><tr><th align="left">命令</th><th>描述</th></tr></thead><tbody><tr><td align="left">Command + Shift + P</td><td>命令面板，算是一个入口</td></tr><tr><td align="left">Option(Alt) + Shift + F</td><td>格式化文档</td></tr><tr><td align="left">Command + P</td><td>打开文件</td></tr><tr><td align="left">Command + Shift + F</td><td>搜索内容</td></tr><tr><td align="left">Ctrl + Alt + N</td><td>Code Runner</td></tr><tr><td align="left">Shift + Alt + U</td><td>保存配置到 Gist</td></tr><tr><td align="left">Ctrl + Alt + D 两次</td><td>快速添加注释</td></tr><tr><td align="left">Shift + Command + 4</td><td>删除行</td></tr><tr><td align="left">Shift + Alt + Up</td><td>向上复制行</td></tr><tr><td align="left">Shift + Ctrl + Command + D</td><td>向下复制行</td></tr><tr><td align="left">Shift + Command + 6</td><td>新建文件</td></tr><tr><td align="left">Shift + Command + 7</td><td>新建目录</td></tr><tr><td align="left">Alt+Up/Down</td><td>移动当前行</td></tr><tr><td align="left">Shift + Command + O</td><td>转到文件中的符号</td></tr><tr><td align="left">Command + T</td><td>转到工作区中的符号</td></tr><tr><td align="left">Ctrl + G</td><td>跳到指定行</td></tr><tr><td align="left">Comand + Shift + M</td><td>显示问题面板</td></tr><tr><td align="left">Comand + Shift + U</td><td>显示输出面板</td></tr><tr><td align="left">Comand + Shift + Y</td><td>显示调试控制台</td></tr><tr><td align="left">Ctrl + `</td><td>显示终端</td></tr><tr><td align="left">Command + E</td><td>打开最近的文件</td></tr><tr><td align="left">Command + K Command + S</td><td>打开快捷键设置窗口</td></tr><tr><td align="left">Command + Enter</td><td>在下面插入行</td></tr><tr><td align="left">Shift + Command + Enter</td><td>在上面插入行</td></tr><tr><td align="left">Shift + Command + L</td><td>选择所有匹配项</td></tr><tr><td align="left">Command + D</td><td>追加选择下一个匹配项</td></tr><tr><td align="left">Command + I</td><td>增长选择</td></tr><tr><td align="left">Shift + Ctrl + Command + Right</td><td>扩展选择</td></tr><tr><td align="left">Shift + Ctrl + Command + Left</td><td>收起选择</td></tr><tr><td align="left">Alt + Shift + F</td><td>格式化代码</td></tr><tr><td align="left">Ctrl + P</td><td>向上移动光标</td></tr><tr><td align="left">Ctrl + N</td><td>向下移动光标</td></tr><tr><td align="left">Ctrl + B</td><td>向左移动光标</td></tr><tr><td align="left">Ctrl + F</td><td>向右移动光标</td></tr><tr><td align="left">Command + F2</td><td>修改所有匹配项</td></tr></tbody></table><h3 id="代码片段-Snippets"><a href="#代码片段-Snippets" class="headerlink" title="代码片段(Snippets)"></a>代码片段(Snippets)</h3><ol><li>stless<br><code>StatelessWidget</code></li><li>stful<br><code>StatefulWidget</code></li><li>stanim<br><code>StatefulWidget with AnimationController</code></li><li>cl cll clll<br>console.log</li></ol><hr><h3 id="与-WebStorm-不同点"><a href="#与-WebStorm-不同点" class="headerlink" title="与 WebStorm 不同点"></a>与 WebStorm 不同点</h3><ol><li>同一个功能，只支持一个快捷键</li><li>没找到怎么一键关闭所有面板</li><li>默认 <strong>双击</strong> 才能打开一个文件，单击只是在浏览</li></ol><hr><h3 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h3><ol><li>zsh 图形显示的问题</li></ol>]]></content>
     
     <summary type="html">
     
@@ -121,11 +166,11 @@
       <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
     
       <category term="TypeScript" scheme="http://yoursite.com/tags/TypeScript/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
       <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
     
@@ -265,9 +310,9 @@
     
       <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="组件化" scheme="http://yoursite.com/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -294,13 +339,13 @@
     
       <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
-    
       <category term="Virtual Dom" scheme="http://yoursite.com/tags/Virtual-Dom/"/>
     
       <category term="虚拟 DOM" scheme="http://yoursite.com/tags/%E8%99%9A%E6%8B%9F-DOM/"/>
     
       <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+      <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
     
   </entry>
   
@@ -432,9 +477,9 @@
       <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
       <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
     
@@ -494,13 +539,13 @@
       <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
     
     
-      <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
-    
       <category term="折腾" scheme="http://yoursite.com/tags/%E6%8A%98%E8%85%BE/"/>
     
       <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
       <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+      <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
     
   </entry>
   
@@ -524,11 +569,11 @@
       <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
     
     
-      <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
-    
       <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
       <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
+    
+      <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
     
       <category term="crontab" scheme="http://yoursite.com/tags/crontab/"/>
     
@@ -555,21 +600,21 @@
       <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
-    
-      <category term="pipenv" scheme="http://yoursite.com/tags/pipenv/"/>
-    
       <category term="折腾" scheme="http://yoursite.com/tags/%E6%8A%98%E8%85%BE/"/>
     
       <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
     
       <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
     
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
       <category term="crontab" scheme="http://yoursite.com/tags/crontab/"/>
     
       <category term="Pip" scheme="http://yoursite.com/tags/Pip/"/>
     
       <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
+    
+      <category term="pipenv" scheme="http://yoursite.com/tags/pipenv/"/>
     
       <category term="定时" scheme="http://yoursite.com/tags/%E5%AE%9A%E6%97%B6/"/>
     
@@ -811,9 +856,9 @@
       <category term="博客" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
-    
       <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
@@ -843,11 +888,11 @@
       <category term="Git" scheme="http://yoursite.com/categories/Git/"/>
     
     
-      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
       <category term="ssh" scheme="http://yoursite.com/tags/ssh/"/>
+    
+      <category term="教程" scheme="http://yoursite.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1548,13 +1593,13 @@ table th:first-of-type {
       <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
     
       <category term="Vue" scheme="http://yoursite.com/tags/Vue/"/>
     
-      <category term="Ubuntu" scheme="http://yoursite.com/tags/Ubuntu/"/>
-    
       <category term="Flask" scheme="http://yoursite.com/tags/Flask/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
       <category term="Jinja2" scheme="http://yoursite.com/tags/Jinja2/"/>
     
