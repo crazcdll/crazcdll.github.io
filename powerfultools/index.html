@@ -1,413 +1,116 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.4.1">
-  <link rel="mask-icon" href="/images/geek-modern-life.jpg?v=7.4.1" color="#222">
-  <link rel="alternate" href="/rss.xml" title="zcdll's Blog" type="application/atom+xml">
-
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/geek-modern-life.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.4.1',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
 
-  <meta name="description" content="记录，归纳，整理自己平时用到的工具，提升生产力的工具等等。">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="记录，归纳，整理自己平时用到的工具，提升生产力的工具等等。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="我的利器清单">
 <meta property="og:url" content="http://yoursite.com/powerfultools/index.html">
-<meta property="og:site_name" content="zcdll&#39;s Blog">
+<meta property="og:site_name" content="crazcdll&#39;s Blog">
 <meta property="og:description" content="记录，归纳，整理自己平时用到的工具，提升生产力的工具等等。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-06-03T07:53:31.581Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-02-22T13:57:51.000Z">
+<meta property="article:modified_time" content="2020-07-29T05:54:43.796Z">
+<meta property="article:author" content="crazcdll">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的利器清单">
-<meta name="twitter:description" content="记录，归纳，整理自己平时用到的工具，提升生产力的工具等等。">
-  <link rel="canonical" href="http://yoursite.com/powerfultools/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: false,
-    isPage: true,
-    isArchive: false
-  };
-</script>
+<link rel="canonical" href="http://yoursite.com/powerfultools/">
 
-  <title>我的利器清单 | zcdll's Blog</title>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/powerfultools/index.html","path":"powerfultools/index.html","title":"我的利器清单"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>我的利器清单 | crazcdll's Blog
+</title>
   
-
-
-
 
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/rss.xml" title="crazcdll's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zcdll's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-        <p class="site-subtitle">Be Happy</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">crazcdll's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Be Happy</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
-        <li class="menu-item menu-item-home">
-      
-    
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-tags">
-      
-    
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-categories">
-      
-    
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-archives">
-      
-    
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-powerfultools">
-      
-    
-
-    <a href="/powerfultools/" rel="section"><i class="fa fa-fw fa-flash"></i>利器</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-commonweal">
-      
-    
-
-    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-powerfultools"><a href="/powerfultools/" rel="section"><i class="flash fa-fw"></i>powerfultools</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-commonweal"><a href="/404.html" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a></li>
   </ul>
-
-    
-
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
 </nav>
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-  <div class="reading-progress-bar"></div>
 
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-    
-    
-    
-    <div class="post-block page">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">我的利器清单
-
-</h1>
-
-<div class="post-meta">
-  
 
 </div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
-          <br>
-
-<p>记录，归纳，整理自己平时用到的工具，提升生产力的工具等等。</p>
-<a id="more"></a>
-
-<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><ol>
-<li>MacBook Pro 2018，2.6 GHz 六核Intel Core i7，32 GB 2400 MHz DDR4，512G SSD，Radeon Pro 560X 4 GB</li>
-<li>Bose QC 35 1代</li>
-</ol>
-<h4 id="软件工具"><a href="#软件工具" class="headerlink" title="软件工具"></a>软件工具</h4><ol>
-<li><p><a href="https://github.com/hackjutsu/Lepton" target="_blank" rel="noopener">Lepton</a>，在本地管理 Gist 的工具，很好用。</p>
-</li>
-<li><p>Dukto，在 Mac 和 Windows 之间传文件，也就是在局域网之内传文件。</p>
-</li>
-<li><p>eZip，Mac 上的解压缩工具</p>
-</li>
-<li><p>录屏</p>
-<ol>
-<li><a href="https://www.ieway.cn/evcapture.html" target="_blank" rel="noopener">EV录屏</a> Win + Mac + 安卓</li>
-<li><a href="https://getkap.co/" target="_blank" rel="noopener">kap</a> Mac</li>
-<li><a href="https://obsproject.com/" target="_blank" rel="noopener">OBS</a> Win + Mac + Linux</li>
-<li><a href="https://www.telestream.net/screenflow/" target="_blank" rel="noopener">ScreenFlow</a> Mac</li>
-</ol>
-</li>
-<li><p>截图</p>
-<ol>
-<li><a href="https://zh.snipaste.com/" target="_blank" rel="noopener">Snipaste</a> Win + Mac</li>
-</ol>
-</li>
-<li><p><a href="https://github.com/voidcosmos/npkill" target="_blank" rel="noopener">npkill</a>，清理 node_modules，能够节省很大空间！</p>
-</li>
-</ol>
-<h4 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h4><ol>
-<li>图片压缩<ol>
-<li><a href="https://www.iloveimg.com/zh-cn" target="_blank" rel="noopener">ILoveIMG</a></li>
-</ol>
-</li>
-<li>音视频转换</li>
-<li>PDF转换，往往包含了不止一个工具<ol>
-<li><a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">ILovePDF</a></li>
-<li><a href="https://www.pdf2go.com/zh" target="_blank" rel="noopener">PDF2Go</a></li>
-<li><a href="https://pdftoimage.com/zh/" target="_blank" rel="noopener">PDFtoImage</a></li>
-<li><a href="https://smallpdf.com/cn/pdf-to-jpg" target="_blank" rel="noopener">SmallPDF</a></li>
-</ol>
-</li>
-<li>简单图片处理</li>
-<li>语音转文字<ol>
-<li><a href="https://app.xunjiepdf.com/" target="_blank" rel="noopener">迅捷PDF转换器</a> 这个里面可以有语音转文字</li>
-</ol>
-</li>
-<li>远程桌面</li>
-<li>图床</li>
-<li>正则表达式<ol>
-<li><a href="https://regex101.com/" target="_blank" rel="noopener">regex101</a></li>
-<li><a href="https://regexper.com/" target="_blank" rel="noopener">Regexper</a></li>
-<li><a href="https://regexr.com/" target="_blank" rel="noopener">regexr</a></li>
-</ol>
-</li>
-</ol>
-<h4 id="导航站"><a href="#导航站" class="headerlink" title="导航站"></a>导航站</h4><ol>
-<li><a href="https://nav.ops-coffee.cn/" target="_blank" rel="noopener">咖啡吧导航</a></li>
-</ol>
-<h4 id="在线工具集"><a href="#在线工具集" class="headerlink" title="在线工具集"></a>在线工具集</h4><ol>
-<li><a href="https://tool.lu/" target="_blank" rel="noopener">在线工具-程序员的工具箱</a></li>
-<li><a href="https://www.yuv420.com/tools/" target="_blank" rel="noopener">影音视频工具软件专区</a></li>
-</ol>
-<h4 id="下载相关"><a href="#下载相关" class="headerlink" title="下载相关"></a>下载相关</h4><ol>
-<li><a href="http://msdn.itellyou.cn/" target="_blank" rel="noopener">MSDN I Tell You</a></li>
-<li><a href="https://hrtsea.com/" target="_blank" rel="noopener">烈火软件汉化-心海e站</a></li>
-<li><a href="https://xclient.info/" target="_blank" rel="noopener">Xclient</a> Mac</li>
-</ol>
-<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><ol>
-<li>Icon</li>
-</ol>
-
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
-  </div>
-
-
-          </div>
-          
-    
-    <div class="comments" id="comments"></div>
   
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
   </div>
 
   <aside class="sidebar">
-    <div class="sidebar-inner">
-        
-        
-        
-        
-      
 
-      <ul class="sidebar-nav motion-element">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
         </li>
@@ -416,141 +119,204 @@
         </li>
       </ul>
 
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Coding"><span class="nav-number">1.</span> <span class="nav-text">Coding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件"><span class="nav-number"></span> <span class="nav-text">硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#软件工具"><span class="nav-number">0.1.</span> <span class="nav-text">软件工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线工具"><span class="nav-number">0.2.</span> <span class="nav-text">在线工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导航站"><span class="nav-number">0.3.</span> <span class="nav-text">导航站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线工具集"><span class="nav-number">0.4.</span> <span class="nav-text">在线工具集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载相关"><span class="nav-number">0.5.</span> <span class="nav-text">下载相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生活"><span class="nav-number">1.</span> <span class="nav-text">生活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">2.</span> <span class="nav-text">其它</span></a></li></ol></div>
-        
-      </div>
-      <!--/noindex-->
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Coding"><span class="nav-number">1.</span> <span class="nav-text">Coding</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6"><span class="nav-number"></span> <span class="nav-text">硬件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E5%85%B7"><span class="nav-number">0.1.</span> <span class="nav-text">软件工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7"><span class="nav-number">0.2.</span> <span class="nav-text">在线工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%BC%E8%88%AA%E7%AB%99"><span class="nav-number">0.3.</span> <span class="nav-text">导航站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%BA%BF%E5%B7%A5%E5%85%B7%E9%9B%86"><span class="nav-number">0.4.</span> <span class="nav-text">在线工具集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3"><span class="nav-number">0.5.</span> <span class="nav-text">下载相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%B4%BB"><span class="nav-number">1.</span> <span class="nav-text">生活</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-number">2.</span> <span class="nav-text">其它</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/images/lianmeng.jpg"
-      alt="zcdll">
-  <p class="site-author-name" itemprop="name">zcdll</p>
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="crazcdll"
+      src="/images/lianmeng.jpg">
+  <p class="site-author-name" itemprop="name">crazcdll</p>
   <div class="site-description" itemprop="description">keep going</div>
 </div>
-<div class="site-state-wrap motion-element">
+<div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">67</span>
+        <a href="/archives/">
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
-            <a href="/categories/">
-          
-        
-        <span class="site-state-item-count">26</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
-            <a href="/tags/">
-          
-        
-        <span class="site-state-item-count">147</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
+          <a href="/tags/">
+        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
-    
   </nav>
 </div>
-  <div class="feed-link motion-element">
-    <a href="/rss.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
-  </div>
-  <div class="links-of-author motion-element">
+  <div class="links-of-author site-overview-item animated">
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/zcdll" title="GitHub &rarr; https://github.com/zcdll" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/crazcll" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crazcll" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
-    
       <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="http://weibo.com/zcdll" title="Weibo &rarr; http://weibo.com/zcdll" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+        <a href="https://weibo.com/zcdll" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;zcdll" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
       </span>
-    
   </div>
 
 
 
+        </div>
       </div>
-
     </div>
   </aside>
-  <div id="sidebar-dimmer"></div>
+  <div class="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
+    </header>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">zcdll</span>
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">我的利器清单
+</h1>
+
+<div class="post-meta-container">
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
 
-        
+</header>
 
+      
+      
+      <div class="post-body">
+          <br />
 
+<p>记录，归纳，整理自己平时用到的工具，提升生产力的工具等等。</p>
+<span id="more"></span>
 
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><ol>
+<li>MacBook Pro 2018，2.6 GHz 六核Intel Core i7，32 GB 2400 MHz DDR4，512G SSD，Radeon Pro 560X 4 GB</li>
+<li>Bose QC 35 1代</li>
+</ol>
+<h4 id="软件工具"><a href="#软件工具" class="headerlink" title="软件工具"></a>软件工具</h4><ol>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hackjutsu/Lepton">Lepton</a>，在本地管理 Gist 的工具，很好用。</p>
+</li>
+<li><p>Dukto，在 Mac 和 Windows 之间传文件，也就是在局域网之内传文件。</p>
+</li>
+<li><p>eZip，Mac 上的解压缩工具</p>
+</li>
+<li><p>录屏</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.ieway.cn/evcapture.html">EV录屏</a> Win + Mac + 安卓</li>
+<li><a target="_blank" rel="noopener" href="https://getkap.co/">kap</a> Mac</li>
+<li><a target="_blank" rel="noopener" href="https://obsproject.com/">OBS</a> Win + Mac + Linux</li>
+<li><a target="_blank" rel="noopener" href="https://www.telestream.net/screenflow/">ScreenFlow</a> Mac</li>
+</ol>
+</li>
+<li><p>截图</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zh.snipaste.com/">Snipaste</a> Win + Mac</li>
+</ol>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/voidcosmos/npkill">npkill</a>，清理 node_modules，能够节省很大空间！</p>
+</li>
+</ol>
+<h4 id="在线工具"><a href="#在线工具" class="headerlink" title="在线工具"></a>在线工具</h4><ol>
+<li>图片压缩<ol>
+<li><a target="_blank" rel="noopener" href="https://www.iloveimg.com/zh-cn">ILoveIMG</a></li>
+</ol>
+</li>
+<li>音视频处理<ol>
+<li><a target="_blank" rel="noopener" href="https://vocalremover.org/">vocalremover</a> 能够分离人声和伴奏，能够变调</li>
+</ol>
+</li>
+<li>PDF转换，往往包含了不止一个工具<ol>
+<li><a target="_blank" rel="noopener" href="https://www.ilovepdf.com/zh-cn">ILovePDF</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pdf2go.com/zh">PDF2Go</a></li>
+<li><a target="_blank" rel="noopener" href="https://pdftoimage.com/zh/">PDFtoImage</a></li>
+<li><a target="_blank" rel="noopener" href="https://smallpdf.com/cn/pdf-to-jpg">SmallPDF</a></li>
+</ol>
+</li>
+<li>简单图片处理</li>
+<li>语音转文字<ol>
+<li><a target="_blank" rel="noopener" href="https://app.xunjiepdf.com/">迅捷PDF转换器</a> 这个里面可以有语音转文字</li>
+</ol>
+</li>
+<li>远程桌面</li>
+<li>图床</li>
+<li>正则表达式<ol>
+<li><a target="_blank" rel="noopener" href="https://regex101.com/">regex101</a></li>
+<li><a target="_blank" rel="noopener" href="https://regexper.com/">Regexper</a></li>
+<li><a target="_blank" rel="noopener" href="https://regexr.com/">regexr</a></li>
+</ol>
+</li>
+</ol>
+<h4 id="导航站"><a href="#导航站" class="headerlink" title="导航站"></a>导航站</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://nav.ops-coffee.cn/">咖啡吧导航</a></li>
+</ol>
+<h4 id="在线工具集"><a href="#在线工具集" class="headerlink" title="在线工具集"></a>在线工具集</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://tool.lu/">在线工具-程序员的工具箱</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.yuv420.com/tools/">影音视频工具软件专区</a></li>
+</ol>
+<h4 id="下载相关"><a href="#下载相关" class="headerlink" title="下载相关"></a>下载相关</h4><ol>
+<li><a target="_blank" rel="noopener" href="http://msdn.itellyou.cn/">MSDN I Tell You</a></li>
+<li><a target="_blank" rel="noopener" href="https://hrtsea.com/">烈火软件汉化-心海e站</a></li>
+<li><a target="_blank" rel="noopener" href="https://xclient.info/">Xclient</a> Mac</li>
+</ol>
+<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><ol>
+<li>Icon</li>
+</ol>
 
-
-
-
-
-
-
-
-
-        
       </div>
-    </footer>
+      
+      
+      
+    </div>
+
+    
+    
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crazcdll</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
 
+    </div>
+  </footer>
+
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/muse.js?v=7.4.1"></script>
-<script src="/js/next-boot.js?v=7.4.1"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -558,71 +324,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
   
 
 
-<script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: true,
-    notify: true,
-    appId: 'gp5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz',
-    appKey: 'hBcmnbod2qG3t7K4XecG6Y7Y',
-    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-    avatar: 'retro',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: true,
-    lang: 'zh-cn' || 'zh-cn',
-    path: location.pathname,
-    recordIP: true,
-    serverURLs: ''
-  });
-}, window.Valine);
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"p5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz","app_key":"hBcmnbod2qG3t7K4XecG6Y7Y","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"crazcdll","repo":"zcdll-blog-gittalk","client_id":"cd26ec48395f5feb5289","client_secret":"ef9053cd205d4b5176d4933e75ac8090c89a62ac","admin_user":"crazcdll","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"2604db8d41c7091279fcb065f7fffc12"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

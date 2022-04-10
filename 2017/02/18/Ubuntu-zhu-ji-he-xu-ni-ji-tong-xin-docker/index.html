@@ -1,69 +1,32 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.4.1">
-  <link rel="mask-icon" href="/images/geek-modern-life.jpg?v=7.4.1" color="#222">
-  <link rel="alternate" href="/rss.xml" title="zcdll's Blog" type="application/atom+xml">
-
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/geek-modern-life.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.4.1',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
 
-  <meta name="description" content="近些天随着在公司上手新的项目，需要学的东西也越来越多，同时相关配套服务上，也有学习。比如 Docker。 周末想着在家搭建一套，遂记录下来。">
-<meta name="keywords" content="Linux,Ubuntu,Vmware Workstation,桥接模式,ping,Web 服务,Docker">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="近些天随着在公司上手新的项目，需要学的东西也越来越多，同时相关配套服务上，也有学习。比如 Docker。 周末想着在家搭建一套，遂记录下来。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 &amp; Docker 初探">
 <meta property="og:url" content="http://yoursite.com/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/index.html">
-<meta property="og:site_name" content="zcdll&#39;s Blog">
+<meta property="og:site_name" content="crazcdll&#39;s Blog">
 <meta property="og:description" content="近些天随着在公司上手新的项目，需要学的东西也越来越多，同时相关配套服务上，也有学习。比如 Docker。 周末想着在家搭建一套，遂记录下来。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/snipaste20170219_002343.png">
 <meta property="og:image" content="http://yoursite.com/images/snipaste20170219_003043.png">
 <meta property="og:image" content="http://yoursite.com/images/snipaste20170219_012831.png">
@@ -71,278 +34,239 @@
 <meta property="og:image" content="http://yoursite.com/images/snipaste20170219_013926.png">
 <meta property="og:image" content="http://yoursite.com/images/snipaste20170219_013958.png">
 <meta property="og:image" content="http://yoursite.com/images/snipaste20170219_015320.png">
-<meta property="og:updated_time" content="2018-11-16T20:01:35.852Z">
+<meta property="article:published_time" content="2017-02-18T14:54:51.000Z">
+<meta property="article:modified_time" content="2018-11-16T20:01:35.852Z">
+<meta property="article:author" content="crazcdll">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Vmware Workstation">
+<meta property="article:tag" content="桥接模式">
+<meta property="article:tag" content="ping">
+<meta property="article:tag" content="Web 服务">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 &amp; Docker 初探">
-<meta name="twitter:description" content="近些天随着在公司上手新的项目，需要学的东西也越来越多，同时相关配套服务上，也有学习。比如 Docker。 周末想着在家搭建一套，遂记录下来。">
 <meta name="twitter:image" content="http://yoursite.com/images/snipaste20170219_002343.png">
-  <link rel="canonical" href="http://yoursite.com/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
-  };
-</script>
+<link rel="canonical" href="http://yoursite.com/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/">
 
-  <title>Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探 | zcdll's Blog</title>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/","path":"2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/","title":"Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探 | crazcdll's Blog</title>
   
-
-
-
 
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/rss.xml" title="crazcdll's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zcdll's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-        <p class="site-subtitle">Be Happy</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">crazcdll's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Be Happy</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
-        <li class="menu-item menu-item-home">
-      
-    
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-tags">
-      
-    
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-categories">
-      
-    
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-archives">
-      
-    
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-powerfultools">
-      
-    
-
-    <a href="/powerfultools/" rel="section"><i class="fa fa-fw fa-flash"></i>利器</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-commonweal">
-      
-    
-
-    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-powerfultools"><a href="/powerfultools/" rel="section"><i class="flash fa-fw"></i>powerfultools</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-commonweal"><a href="/404.html" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a></li>
   </ul>
-
-    
-
 </nav>
+
+
+
+
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ubuntu-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu 虚拟环境的搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%BC%80%E5%90%AF%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">虚拟机开启桥接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%99-%E7%89%A9%E7%90%86%E7%BD%91%E5%8D%A1-%E5%AE%89%E8%A3%85-VMware-Bridge-Protocol"><span class="nav-number">2.2.1.</span> <span class="nav-text">给 物理网卡 安装 VMware Bridge Protocol</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E9%97%AD-Ubuntu-%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">2.2.2.</span> <span class="nav-text">关闭 Ubuntu 防火墙</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE-Windows-%E9%98%B2%E7%81%AB%E5%A2%99"><span class="nav-number">2.2.3.</span> <span class="nav-text">设置 Windows 防火墙</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-%E6%90%AD%E5%BB%BA"><span class="nav-number">2.3.</span> <span class="nav-text">MongoDB 搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-virtualenv-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">2.4.</span> <span class="nav-text">python virtualenv 环境搭建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%A6%81%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="nav-number">4.</span> <span class="nav-text">接下来要实现的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.1.</span> <span class="nav-text">mark... </span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.2.</span> <span class="nav-text">such a day</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">4.3.</span> <span class="nav-text">引用看**《人类简史》**得到的一个**妙论**：推动人类进步的，一切都TM是想象。。。 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link"><span class="nav-number">4.3.1.</span> <span class="nav-text">二零一七年元月二十三日·孤夜</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="crazcdll"
+      src="/images/lianmeng.jpg">
+  <p class="site-author-name" itemprop="name">crazcdll</p>
+  <div class="site-description" itemprop="description">keep going</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crazcll" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crazcll" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/zcdll" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;zcdll" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
-  
-  <div class="post-block post">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zcdll">
-      <meta itemprop="description" content="keep going">
       <meta itemprop="image" content="/images/lianmeng.jpg">
+      <meta itemprop="name" content="crazcdll">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zcdll's Blog">
+      <meta itemprop="name" content="crazcdll's Blog">
+      <meta itemprop="description" content="keep going">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探 | crazcdll's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探
-
-          
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2017-02-18 22:54:51" itemprop="dateCreated datePublished" datetime="2017-02-18T22:54:51+08:00">2017-02-18</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-11-17 04:01:35" itemprop="dateModified" datetime="2018-11-17T04:01:35+08:00">2018-11-17</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span id="/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/" class="post-meta-item leancloud_visitors" data-flag-title="Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-          
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-calendar"></i>
       </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/" itemprop="commentCount"></span></a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-02-18 22:54:51" itemprop="dateCreated datePublished" datetime="2017-02-18T22:54:51+08:00">2017-02-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2018-11-17 04:01:35" itemprop="dateModified" datetime="2018-11-17T04:01:35+08:00">2018-11-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2017/02/18/Ubuntu-zhu-ji-he-xu-ni-ji-tong-xin-docker/" class="post-meta-item leancloud_visitors" data-flag-title="Ubuntu 主机和虚拟机通信，主机访问虚拟机的 Web 服务 & Docker 初探" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -351,11 +275,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>近些天随着在公司上手新的项目，需要学的东西也越来越多，同时相关配套服务上，也有学习。比如 Docker。</p>
 <p>周末想着在家搭建一套，遂记录下来。</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <hr>
 <h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><ol>
@@ -365,7 +287,7 @@
 <li>最终可以在主机上访问 python 的 web 服务</li>
 </ol>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><h4 id="Ubuntu-虚拟环境的搭建"><a href="#Ubuntu-虚拟环境的搭建" class="headerlink" title="Ubuntu 虚拟环境的搭建"></a>Ubuntu 虚拟环境的搭建</h4><ol>
-<li>本来 Docker 直接装在了 Windows 10 中，然后发现 VMware Workstation 就打不开了，原因是与 Windows 10 自带的 <strong>Hyper-V</strong> 冲突了。而 Windows 下的 Docker 是依赖 Hyper-V的。原因如下：<a href="http://stackoverflow.com/questions/39858200/vmware-workstation-and-device-credential-guard-are-not-compatible" target="_blank" rel="noopener">VMware Workstation and Device/Credential Guard are not compatible</a>，<a href="https://www.zhihu.com/question/21260608" target="_blank" rel="noopener">hyper-v 和 vmware 不兼容，是技术的原因？还是商业原因？</a> ，<a href="https://www.zhihu.com/question/24981958" target="_blank" rel="noopener">在 Windows 10上,Vmware Workstation和Hyper-V 深层次上有何优劣？</a> 。</li>
+<li>本来 Docker 直接装在了 Windows 10 中，然后发现 VMware Workstation 就打不开了，原因是与 Windows 10 自带的 <strong>Hyper-V</strong> 冲突了。而 Windows 下的 Docker 是依赖 Hyper-V的。原因如下：<a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/39858200/vmware-workstation-and-device-credential-guard-are-not-compatible">VMware Workstation and Device&#x2F;Credential Guard are not compatible</a>，<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/21260608">hyper-v 和 vmware 不兼容，是技术的原因？还是商业原因？</a> ，<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/24981958">在 Windows 10上,Vmware Workstation和Hyper-V 深层次上有何优劣？</a> 。</li>
 <li>把 Hyper-V 关了后，VMware Workstation 就能用了，也就是在 Windows 下 Docker 和 VMWare Workstation 得<strong>二选一</strong>，我最终选了 VMware Workstation。回想当时在 Windows 下安装 Docker 时，确实弹出了一个提示，说 Hyper-V 啥啥的，和 Virtualbox 冲突，也没在意，就直接把 Virtualbox 删了，当时还手残把 Dropbox 给删了。。。</li>
 </ol>
 <h4 id="虚拟机开启桥接模式"><a href="#虚拟机开启桥接模式" class="headerlink" title="虚拟机开启桥接模式"></a>虚拟机开启桥接模式</h4><ol>
@@ -398,18 +320,18 @@
 </li>
 </ol>
 <h4 id="MongoDB-搭建"><a href="#MongoDB-搭建" class="headerlink" title="MongoDB 搭建"></a>MongoDB 搭建</h4><ol>
-<li>而由于之前在 VMware Workstation 中搭建的 Ubuntu 键盘搞错了，一直是欧洲键盘，索性今天一起重装了。本以为要花很长时间，没想到很快就完成了。等 Ubuntu 的基础环境搭建好后，就是安装 Docker，参考 <a href="https://yeasy.gitbooks.io/docker_practice/content/" target="_blank" rel="noopener">Docker — 从入门到实践</a>，感觉这本书写的很好，很全面，很细致，很新，作者一直在更新。加速器用的阿里云。</li>
+<li>而由于之前在 VMware Workstation 中搭建的 Ubuntu 键盘搞错了，一直是欧洲键盘，索性今天一起重装了。本以为要花很长时间，没想到很快就完成了。等 Ubuntu 的基础环境搭建好后，就是安装 Docker，参考 <a target="_blank" rel="noopener" href="https://yeasy.gitbooks.io/docker_practice/content/">Docker — 从入门到实践</a>，感觉这本书写的很好，很全面，很细致，很新，作者一直在更新。加速器用的阿里云。</li>
 <li>由于对 Docker 只是粗浅的了解，很多坑还没踩，一开始 run Mongo 的时候总不对，最后感谢小伙伴马同学帮忙搞定，正确的命令如下：</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name <span class="built_in">test</span>-mongo -d -p 27017:27017 mongo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name test-mongo -d -p 27017:27017 mongo</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
 <li>这样就把 mongo 加载到了本机 27017 端口上，不写端口映射的话，可能会连接不上。之后每次只要运行如下命令即刻启动 Docker 下的 mongo</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start <span class="built_in">test</span>-mongo</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start test-mongo</span><br></pre></td></tr></table></figure>
 
 <h4 id="python-virtualenv-环境搭建"><a href="#python-virtualenv-环境搭建" class="headerlink" title="python virtualenv 环境搭建"></a>python virtualenv 环境搭建</h4><ol>
-<li>根据官方文档来即刻，注意 python 版本，<a href="http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html" target="_blank" rel="noopener">Python 指南-虚拟环境</a> </li>
+<li>根据官方文档来即刻，注意 python 版本，<a target="_blank" rel="noopener" href="http://pythonguidecn.readthedocs.io/zh/latest/dev/virtualenvs.html">Python 指南-虚拟环境</a> </li>
 <li>搭建完后，注意先安装所需要的依赖，这步很重要，前提是换 pip 源，记得要添加 trust-host，免得报错。</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cd ~</span></span><br><span class="line"><span class="comment"># mkdir .pip</span></span><br><span class="line"><span class="comment"># touch pip.conf</span></span><br><span class="line"><span class="comment"># vi pip.conf</span></span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.douban.com/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=pypi.douban.com</span><br></pre></td></tr></table></figure>
@@ -428,10 +350,10 @@
 <li>从主机上的 PyCharm 访问 Docker 中的项目，实现编辑。</li>
 </ol>
 <p>参考链接：</p>
-<p><a href="http://www.jianshu.com/p/a2df6c801b28" target="_blank" rel="noopener">VMware Workstation - 网卡无法桥接</a></p>
-<p><a href="http://chris2013.blog.51cto.com/6931081/1209278" target="_blank" rel="noopener">虚拟机ping不通主机，但是主机可以ping通虚拟机</a></p>
-<p><a href="http://www.arthurtoday.com/2013/12/ubuntu-ufw-add-firewall-rules.html" target="_blank" rel="noopener">Ubuntu 用 ufw 指令快速啟用和設定防火牆</a></p>
-<p><a href="http://graybull.is-programmer.com/posts/36941.html" target="_blank" rel="noopener">从外网访问VMware虚拟机的Web服务</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.jianshu.com/p/a2df6c801b28">VMware Workstation - 网卡无法桥接</a></p>
+<p><a target="_blank" rel="noopener" href="http://chris2013.blog.51cto.com/6931081/1209278">虚拟机ping不通主机，但是主机可以ping通虚拟机</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.arthurtoday.com/2013/12/ubuntu-ufw-add-firewall-rules.html">Ubuntu 用 ufw 指令快速啟用和設定防火牆</a></p>
+<p><a target="_blank" rel="noopener" href="http://graybull.is-programmer.com/posts/36941.html">从外网访问VMware虚拟机的Web服务</a></p>
 <hr>
 <h4 style="text-align:center">mark... </h4>
 
@@ -449,261 +371,101 @@
     
     
     
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
-  <img id="wechat_subscriber_qcode" src="/images/wechat-qcode.jpg" alt="zcdll wechat" style="width: 200px; max-width: 100%;">
-  <div>交流或订阅，请长按或扫描上方微信二维码</div>
-</div>
 
-      
-        
-      
-        <div id="reward-container">
-  <div>赞赏是对我最大的支持！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/wechatpay.jpg" alt="zcdll 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="crazcdll 微信">
+        <span>微信</span>
       </div>
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/alipay.jpg" alt="zcdll 支付宝">
-        <p>支付宝</p>
+      <div>
+        <img src="/images/alipay.jpg" alt="crazcdll 支付宝">
+        <span>支付宝</span>
       </div>
 
   </div>
 </div>
 
-      
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
 
-      <footer class="post-footer">
-          
-            
-          
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat-qcode.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
           <div class="post-tags">
-            
               <a href="/tags/Linux/" rel="tag"># Linux</a>
-            
               <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
-            
               <a href="/tags/Vmware-Workstation/" rel="tag"># Vmware Workstation</a>
-            
-              <a href="/tags/桥接模式/" rel="tag"># 桥接模式</a>
-            
+              <a href="/tags/%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/" rel="tag"># 桥接模式</a>
               <a href="/tags/ping/" rel="tag"># ping</a>
-            
-              <a href="/tags/Web-服务/" rel="tag"># Web 服务</a>
-            
+              <a href="/tags/Web-%E6%9C%8D%E5%8A%A1/" rel="tag"># Web 服务</a>
               <a href="/tags/Docker/" rel="tag"># Docker</a>
-            
           </div>
-        
 
         
 
           <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2016/12/16/zen-me-sheng-ji-ubuntu-nei-he-on-linode/" rel="next" title="怎么升级 Linode 上 Ubuntu 的内核">
+            <div class="post-nav-item">
+                <a href="/2016/12/16/zen-me-sheng-ji-ubuntu-nei-he-on-linode/" rel="prev" title="怎么升级 Linode 上 Ubuntu 的内核">
                   <i class="fa fa-chevron-left"></i> 怎么升级 Linode 上 Ubuntu 的内核
                 </a>
-              
             </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2017/02/21/flask-vue-restful/" rel="prev" title="Flask-Vue">
+            <div class="post-nav-item">
+                <a href="/2017/02/21/flask-vue-restful/" rel="next" title="Flask-Vue">
                   Flask-Vue <i class="fa fa-chevron-right"></i>
                 </a>
-              
             </div>
           </div>
-        
-      </footer>
-    
-  </div>
-  
-  
-  
+    </footer>
   </article>
-
-  </div>
-
-
-          </div>
-          
-    
-    <div class="comments" id="comments"></div>
-  
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-        
-        
-        
-        
-      
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Ubuntu-虚拟环境的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu 虚拟环境的搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟机开启桥接模式"><span class="nav-number">2.2.</span> <span class="nav-text">虚拟机开启桥接模式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#给-物理网卡-安装-VMware-Bridge-Protocol"><span class="nav-number">2.2.1.</span> <span class="nav-text">给 物理网卡 安装 VMware Bridge Protocol</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关闭-Ubuntu-防火墙"><span class="nav-number">2.2.2.</span> <span class="nav-text">关闭 Ubuntu 防火墙</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#设置-Windows-防火墙"><span class="nav-number">2.2.3.</span> <span class="nav-text">设置 Windows 防火墙</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-搭建"><span class="nav-number">2.3.</span> <span class="nav-text">MongoDB 搭建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python-virtualenv-环境搭建"><span class="nav-number">2.4.</span> <span class="nav-text">python virtualenv 环境搭建</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接下来要实现的"><span class="nav-number">4.</span> <span class="nav-text">接下来要实现的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.1.</span> <span class="nav-text">mark... </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.2.</span> <span class="nav-text">such a day</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">4.3.</span> <span class="nav-text">引用看**《人类简史》**得到的一个**妙论**：推动人类进步的，一切都TM是想象。。。 </span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">4.3.1.</span> <span class="nav-text">二零一七年元月二十三日·孤夜</span></a></li></ol></li></ol></li></ol></div>
-        
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/images/lianmeng.jpg"
-      alt="zcdll">
-  <p class="site-author-name" itemprop="name">zcdll</p>
-  <div class="site-description" itemprop="description">keep going</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">67</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-categories">
-        
-          
-            <a href="/categories/">
-          
-        
-        <span class="site-state-item-count">26</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-tags">
-        
-          
-            <a href="/tags/">
-          
-        
-        <span class="site-state-item-count">147</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
-      </div>
-    
-  </nav>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
-  <div class="feed-link motion-element">
-    <a href="/rss.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crazcdll</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/zcdll" title="GitHub &rarr; https://github.com/zcdll" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-    
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="http://weibo.com/zcdll" title="Weibo &rarr; http://weibo.com/zcdll" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-      </span>
-    
-  </div>
-
-
-
-      </div>
 
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">zcdll</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-  </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/muse.js?v=7.4.1"></script>
-<script src="/js/next-boot.js?v=7.4.1"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -711,71 +473,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
   
 
 
-<script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: true,
-    notify: true,
-    appId: 'gp5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz',
-    appKey: 'hBcmnbod2qG3t7K4XecG6Y7Y',
-    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-    avatar: 'retro',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: true,
-    lang: 'zh-cn' || 'zh-cn',
-    path: location.pathname,
-    recordIP: true,
-    serverURLs: ''
-  });
-}, window.Valine);
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"p5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz","app_key":"hBcmnbod2qG3t7K4XecG6Y7Y","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"crazcdll","repo":"zcdll-blog-gittalk","client_id":"cd26ec48395f5feb5289","client_secret":"ef9053cd205d4b5176d4933e75ac8090c89a62ac","admin_user":"crazcdll","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"6566a983515632a230a86c6bf4d7c4a7"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>

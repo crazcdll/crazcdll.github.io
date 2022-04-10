@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/geek-modern-life.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="记录下查过的 MDN 文档，以防看一眼就忘了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查过的 MDN 文档">
+<meta property="og:url" content="http://yoursite.com/2020/06/15/mdn-note/index.html">
+<meta property="og:site_name" content="crazcdll&#39;s Blog">
+<meta property="og:description" content="记录下查过的 MDN 文档，以防看一眼就忘了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-15T09:24:13.000Z">
+<meta property="article:modified_time" content="2020-06-24T12:21:15.994Z">
+<meta property="article:author" content="crazcdll">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2020/06/15/mdn-note/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2020/06/15/mdn-note/","path":"2020/06/15/mdn-note/","title":"查过的 MDN 文档"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>查过的 MDN 文档 | crazcdll's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/rss.xml" title="crazcdll's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">crazcdll's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Be Happy</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-powerfultools"><a href="/powerfultools/" rel="section"><i class="flash fa-fw"></i>powerfultools</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-commonweal"><a href="/404.html" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2020%E5%B9%B46%E6%9C%8815%E6%97%A5"><span class="nav-number">1.</span> <span class="nav-text">2020年6月15日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-map"><span class="nav-number">1.1.</span> <span class="nav-text">Array.map()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileReader-readAsArrayBuffer"><span class="nav-number">1.2.</span> <span class="nav-text">FileReader.readAsArrayBuffer()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2020%E5%B9%B46%E6%9C%8824%E6%97%A5"><span class="nav-number">2.</span> <span class="nav-text">2020年6月24日</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TypedArray"><span class="nav-number">2.1.</span> <span class="nav-text">TypedArray</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.1.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">2.1.2.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TypedArray-%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.1.3.</span> <span class="nav-text">TypedArray 对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Buffer"><span class="nav-number">2.2.</span> <span class="nav-text">Buffer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.2.1.</span> <span class="nav-text">描述</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="crazcdll"
+      src="/images/lianmeng.jpg">
+  <p class="site-author-name" itemprop="name">crazcdll</p>
+  <div class="site-description" itemprop="description">keep going</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crazcll" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crazcll" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/zcdll" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;zcdll" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/15/mdn-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lianmeng.jpg">
+      <meta itemprop="name" content="crazcdll">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="crazcdll's Blog">
+      <meta itemprop="description" content="keep going">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="查过的 MDN 文档 | crazcdll's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          查过的 MDN 文档
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-06-15 17:24:13" itemprop="dateCreated datePublished" datetime="2020-06-15T17:24:13+08:00">2020-06-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-06-24 20:21:15" itemprop="dateModified" datetime="2020-06-24T20:21:15+08:00">2020-06-24</time>
+    </span>
+
+  
+    <span id="/2020/06/15/mdn-note/" class="post-meta-item leancloud_visitors" data-flag-title="查过的 MDN 文档" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>记录下查过的 MDN 文档，以防看一眼就忘了。</p>
+<span id="more"></span>
+
+<h2 id="2020年6月15日"><a href="#2020年6月15日" class="headerlink" title="2020年6月15日"></a>2020年6月15日</h2><h3 id="Array-map"><a href="#Array-map" class="headerlink" title="Array.map()"></a><strong><code>Array.map()</code></strong></h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map">地址</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> new_array = arr.<span class="title function_">map</span>(<span class="keyword">function</span> <span class="title function_">callback</span>(<span class="params">currentValue[, index[, array]]</span>) &#123;</span><br><span class="line"> <span class="comment">// Return element for new_array </span></span><br><span class="line">&#125;[, thisArg])</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>callback</code> 函数只会在 <strong>有值的索引上</strong> 被调用；那些从来没被赋过值或者使用 <code>delete</code> 删除的索引则不会被调用。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> aaa = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aaa, <span class="string">&quot;---aaa&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aaa.<span class="property">length</span>, <span class="string">&quot;---aaa.length&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(aaa[<span class="number">0</span>], <span class="string">&quot;---aaa[0]&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bbb = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>).<span class="title function_">map</span>(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(index, <span class="string">&quot;---index&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这么直接执行，输出为空，也就是没有输出</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ccc = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">ccc[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(ccc, <span class="string">&quot;---ccc&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(ccc.<span class="property">length</span>, <span class="string">&quot;---ccc.length&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ddd = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">ddd[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(ddd, <span class="string">&quot;---ddd&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> eee = ddd.<span class="title function_">map</span>(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(index, <span class="string">&quot;---index&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (index === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">8</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> item;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(eee, <span class="string">&quot;---eee&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(eee.<span class="property">length</span>, <span class="string">&quot;---eee.length&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(aaa), <span class="string">&quot;---JSON.stringify(aaa)&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(aaa)), <span class="string">&quot;---JSON.parse(JSON.stringify(aaa))&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面是输出</span></span><br><span class="line"><span class="comment">// [ &lt;5 empty items&gt; ] ---aaa</span></span><br><span class="line"><span class="comment">// 5 ---aaa.length</span></span><br><span class="line"><span class="comment">// undefined ---aaa[0]</span></span><br><span class="line"><span class="comment">// [ 0, &lt;4 empty items&gt; ] ---ccc</span></span><br><span class="line"><span class="comment">// 5 ---ccc.length</span></span><br><span class="line"><span class="comment">// [ &lt;1 empty item&gt;, 1, &lt;3 empty items&gt; ] ---ddd</span></span><br><span class="line"><span class="comment">// 1 ---index</span></span><br><span class="line"><span class="comment">// [ &lt;1 empty item&gt;, 1, &lt;3 empty items&gt; ] ---eee</span></span><br><span class="line"><span class="comment">// 5 ---eee.length</span></span><br><span class="line"><span class="comment">// [null,null,null,null,null] ---JSON.stringify(aaa)</span></span><br><span class="line"><span class="comment">// [ null, null, null, null, null ] ---JSON.parse(JSON.stringify(aaa))</span></span><br></pre></td></tr></table></figure>
+
+<p>尝试的结果：</p>
+<ol>
+<li><code>console.log</code> 输出为 <code>empty</code> 的数组项，通过索引值输出时为 <code>undefined</code></li>
+<li>打印 <strong>length</strong> 的时候正常，<code>empty</code> 也算</li>
+<li><code>JSON.stringify</code> 会把 <code>undefined</code> 变为 <code>null</code></li>
+<li>通过 <strong>map</strong> 的方式生成的新数组长度和原数组相同，即使原数组全部为 empty，以及无法修改值，参考 <code>eee</code></li>
+</ol>
+<h3 id="FileReader-readAsArrayBuffer"><a href="#FileReader-readAsArrayBuffer" class="headerlink" title="FileReader.readAsArrayBuffer()"></a><code>FileReader.readAsArrayBuffer()</code></h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsArrayBuffer">地址</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileReader = <span class="keyword">new</span> <span class="title class_">FileReader</span>();</span><br><span class="line"></span><br><span class="line">fileReader.<span class="title function_">readAsArrayBuffer</span>(file); <span class="comment">// file or blob</span></span><br></pre></td></tr></table></figure>
+
+<p>还有一个类似的 <code>FileReader.readAsBinaryString()</code>，已经被废弃。</p>
+<h2 id="2020年6月24日"><a href="#2020年6月24日" class="headerlink" title="2020年6月24日"></a>2020年6月24日</h2><h3 id="TypedArray"><a href="#TypedArray" class="headerlink" title="TypedArray"></a>TypedArray</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray">链接</a></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li><p>一个<strong>类型化数组</strong>（<strong>TypedArray）</strong>对象描述了一个底层的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer">二进制数据缓冲区</a>（binary data buffer）的一个类数组视图（view）。</p>
+</li>
+<li><p>会根据传入的长度，生成一个数组，数组中的每一项代表 是 <strong>什么符号</strong> <strong>什么进制</strong> 的 <strong>什么数</strong>，就是那个 <strong>选定的子类型</strong>，有符号 or 无符号？二进制 or 十六进制？整数 or 浮点数？</p>
+<blockquote>
+<p> 也就是说，数组中的每一项是一个 <strong>数字</strong></p>
+<ol>
+<li>我们看到的时候都是 <strong>十进制表示</strong></li>
+<li>但内存中存储的时候，是 <strong>选定的子类型</strong></li>
+</ol>
+</blockquote>
+</li>
+<li><p>ES6 之前没有名为 <code>TypedArray</code> 的全局属性，也没有一个名为 <code>TypedArray</code> 的构造函数。</p>
+</li>
+<li><p>ES6 中定义了一个 <em><code>TypeArray</code></em> 构造器作为所有的类型化数组构造器（<code>Int8Array</code>, <code>Int16Array</code> 等）的原型（<code>[[Prototype]]</code>）。</p>
+</li>
+<li><p>(这里使用 <code>%TypedArray%</code> 猜测是因为，TypedArray 并不存在，无法直接使用，需要替换成 具体 的某一个子类型。类似于模板字符串替换的意思。)<br>但是该构造器并不会直接暴露出来：即没有全局的 <code>%TypedArray%</code> 和 <code>TypeArray</code> 属性，只能通过使用类似于 <code>Object.getPrototypeOf(Int8Array.prototype</code>) 的方式直接访问。所有的类型化数组构造器都会继承 <code>%TypeArray%</code> 构造器函数的公共属性和方法。此外，所有的类型化数组的原型（如 <code>Int8Array.prototype</code>）都以 <code>%TypeArray%.prototype</code> 作为原型。<br><code>%TypedArray%</code> 构造器自身不是特别有用，直接调用或使用 <code>new</code> 表达式实例化都会抛出一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypeError"><code>TypeError</code></a> 异常，除非在支持子类化（subclassing）创建对象的 JS 引擎下运行。</p>
+</li>
+</ol>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面代码是语法格式，不能直接运行，</span></span><br><span class="line"><span class="comment">// TypedArray 关键字需要替换为底部列出的构造函数。</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">TypedArray</span>(); <span class="comment">// ES2017中新增</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">TypedArray</span>(length); </span><br><span class="line"><span class="keyword">new</span> <span class="title class_">TypedArray</span>(typedArray); </span><br><span class="line"><span class="keyword">new</span> <span class="title class_">TypedArray</span>(object); </span><br><span class="line"><span class="keyword">new</span> <span class="title class_">TypedArray</span>(buffer [, byteOffset [, length]]); </span><br><span class="line"></span><br><span class="line"><span class="comment">// TypedArray 指的是以下的其中之一： </span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Int8Array</span>(); </span><br><span class="line"><span class="title class_">Uint8Array</span>(); </span><br><span class="line"><span class="title class_">Uint8ClampedArray</span>();</span><br><span class="line"><span class="title class_">Int16Array</span>(); </span><br><span class="line"><span class="title class_">Uint16Array</span>();</span><br><span class="line"><span class="title class_">Int32Array</span>(); </span><br><span class="line"><span class="title class_">Uint32Array</span>(); </span><br><span class="line"><span class="title class_">Float32Array</span>(); </span><br><span class="line"><span class="title class_">Float64Array</span>();</span><br></pre></td></tr></table></figure>
+
+<h4 id="TypedArray-对象"><a href="#TypedArray-对象" class="headerlink" title="TypedArray 对象"></a>TypedArray 对象</h4><table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">单个元素值的范围</th>
+<th align="left">大小(bytes)</th>
+<th align="left">描述</th>
+<th align="left">Web IDL 类型</th>
+<th align="left">C 语言中的等价类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Int8Array"><code>Int8Array</code></a></td>
+<td align="left"><code>-128</code> to <code>127</code></td>
+<td align="left">1</td>
+<td align="left">8 位二进制有符号整数</td>
+<td align="left"><code>byte</code></td>
+<td align="left"><code>int8_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array"><code>Uint8Array</code></a></td>
+<td align="left"><code>0</code> to <code>255</code></td>
+<td align="left">1</td>
+<td align="left">8 位无符号整数（超出范围后从另一边界循环）</td>
+<td align="left"><code>octet</code></td>
+<td align="left"><code>uint8_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray"><code>Uint8ClampedArray</code></a></td>
+<td align="left"><code>0</code> to <code>255</code></td>
+<td align="left">1</td>
+<td align="left">8 位无符号整数（超出范围后为边界值）</td>
+<td align="left"><code>octet</code></td>
+<td align="left"><code>uint8_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Int16Array"><code>Int16Array</code></a></td>
+<td align="left"><code>-32768</code> to <code>32767</code></td>
+<td align="left">2</td>
+<td align="left">16 位二进制有符号整数</td>
+<td align="left"><code>short</code></td>
+<td align="left"><code>int16_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Uint16Array"><code>Uint16Array</code></a></td>
+<td align="left"><code>0</code> to <code>65535</code></td>
+<td align="left">2</td>
+<td align="left">16 位无符号整数</td>
+<td align="left"><code>unsigned short</code></td>
+<td align="left"><code>uint16_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Int32Array"><code>Int32Array</code></a></td>
+<td align="left"><code>-2147483648</code> to <code>2147483647</code></td>
+<td align="left">4</td>
+<td align="left">32 位二进制有符号整数</td>
+<td align="left"><code>long</code></td>
+<td align="left"><code>int32_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array"><code>Uint32Array</code></a></td>
+<td align="left"><code>0</code> to <code>4294967295</code></td>
+<td align="left">4</td>
+<td align="left">32 位无符号整数</td>
+<td align="left"><code>unsigned long</code></td>
+<td align="left"><code>uint32_t</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Float32Array"><code>Float32Array</code></a></td>
+<td align="left">$1.2×10^{-38}$ to $3.4×10^{38}$</td>
+<td align="left">4</td>
+<td align="left">32 位 IEEE 浮点数（7 位有效数字，如 <code>1.1234567</code>）</td>
+<td align="left"><code>unrestricted float</code></td>
+<td align="left"><code>float</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Float64Array"><code>Float64Array</code></a></td>
+<td align="left">$5.0×10^{-324 }$ to $1.8×10^{308}$</td>
+<td align="left">8</td>
+<td align="left">64 位 IEEE 浮点数（16 有效数字，如 <code>1.123...15</code>)</td>
+<td align="left"><code>unrestricted double</code></td>
+<td align="left"><code>double</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/BigInt64Array"><code>BigInt64Array</code></a></td>
+<td align="left">$-2^{63}$ to $2^{63}-1$</td>
+<td align="left">8</td>
+<td align="left">64 位二进制有符号整数</td>
+<td align="left"><code>bigint</code></td>
+<td align="left"><code>int64_t (signed long long)</code></td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/BigUint64Array"><code>BigUint64Array</code></a></td>
+<td align="left">0 to $2^{64}-1$</td>
+<td align="left">8</td>
+<td align="left">64 位无符号整数</td>
+<td align="left"><code>bigint</code></td>
+<td align="left"><code>uint64_t (unsigned long long)</code></td>
+</tr>
+</tbody></table>
+<h3 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/TypedArray/buffer">链接</a></p>
+<h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><p><code>buffer</code> 属性是一个访问器属性，它的 set 访问器函数是<code>undefined</code>，意思是你只能够读取这个属性。它的值在<em>TypedArray</em>构造时建立，不能被修改。<em>TypedArray</em>是这里的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray#TypedArray_objects">类型化数组</a>之一。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer = <span class="keyword">new</span> <span class="title class_">ArrayBuffer</span>(<span class="number">8</span>);</span><br><span class="line"><span class="keyword">var</span> uint16 = <span class="keyword">new</span> <span class="title class_">Uint16Array</span>(buffer);</span><br><span class="line">uint16.<span class="property">buffer</span>; <span class="comment">// ArrayBuffer &#123; byteLength: 8 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Uint16Array</span>(<span class="keyword">new</span> <span class="title class_">ArrayBuffer</span>(<span class="number">3</span>)) <span class="comment">// 报错如下</span></span><br><span class="line"><span class="comment">// VM471:1 Uncaught RangeError: byte length of Uint16Array should be a multiple of 2</span></span><br><span class="line"><span class="comment">//    at new Uint16Array (&lt;anonymous&gt;)</span></span><br><span class="line"><span class="comment">//    at &lt;anonymous&gt;:1:1</span></span><br></pre></td></tr></table></figure>
+
+<p>所以，总结如下：</p>
+<p><code>new Uint8Array(new ArrayBuffer(n)) </code> 和<code>new Uint8Array(new ArrayBuffer(n))</code>，n 是 length，大于等于0就行</p>
+<p><code>new Uint16Array(new ArrayBuffer(n)) </code> 和<code>new Uint16Array(new ArrayBuffer(n))</code>，n 是 2 的倍数</p>
+<p><code>new Uint32Array(new ArrayBuffer(n)) </code> 和<code>new Uint32Array(new ArrayBuffer(n))</code>，n 是 4 的倍数</p>
+<p><code>new Uint64Array(new ArrayBuffer(n)) </code> 和<code>new Uint64Array(new ArrayBuffer(n))</code>，n 是 8 的倍数</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="crazcdll 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="crazcdll 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat-qcode.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/06/12/whatwg-vs-w3c/" rel="prev" title="关于 WHATWG 和 W3C">
+                  <i class="fa fa-chevron-left"></i> 关于 WHATWG 和 W3C
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/06/20/symbol-escape/" rel="next" title="符号转义">
+                  符号转义 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crazcdll</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"p5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz","app_key":"hBcmnbod2qG3t7K4XecG6Y7Y","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"crazcdll","repo":"zcdll-blog-gittalk","client_id":"cd26ec48395f5feb5289","client_secret":"ef9053cd205d4b5176d4933e75ac8090c89a62ac","admin_user":"crazcdll","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"cd1bd108691fc750f8fa7d6c5bf46f1b"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,342 +1,264 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.9.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg?v=7.4.1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=7.4.1">
-  <link rel="mask-icon" href="/images/geek-modern-life.jpg?v=7.4.1" color="#222">
-  <link rel="alternate" href="/rss.xml" title="zcdll's Blog" type="application/atom+xml">
-
-<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
-<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/geek-modern-life.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
 
 
-<script id="hexo-configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '7.4.1',
-    exturl: false,
-    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
-    bookmark: {"enable":false,"color":"#222","save":"auto"},
-    fancybox: false,
-    mediumzoom: false,
-    lazyload: false,
-    pangu: false,
-    algolia: {
-      appID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    },
-    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
-    path: '',
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
-    sidebarPadding: 40
-  };
-</script>
 
-  <meta name="description" content="如题，总结看到的面试题，不限于自己面试中遇到的，平时看到的，听别人说的。">
-<meta name="keywords" content="JavaScript,前端,CSS,面试2€€22,面试题">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="如题，总结看到的面试题，不限于自己面试中遇到的，平时看到的，听别人说的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="总结看到的面试题">
 <meta property="og:url" content="http://yoursite.com/2020/05/24/interview-question/index.html">
-<meta property="og:site_name" content="zcdll&#39;s Blog">
+<meta property="og:site_name" content="crazcdll&#39;s Blog">
 <meta property="og:description" content="如题，总结看到的面试题，不限于自己面试中遇到的，平时看到的，听别人说的。">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/849589/201708/849589-20170810192309683-590729765.png">
-<meta property="og:updated_time" content="2020-06-06T13:59:20.159Z">
+<meta property="article:published_time" content="2020-05-24T01:27:24.000Z">
+<meta property="article:modified_time" content="2020-09-14T14:52:35.048Z">
+<meta property="article:author" content="crazcdll">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="面试2€€22">
+<meta property="article:tag" content="面试题">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="总结看到的面试题">
-<meta name="twitter:description" content="如题，总结看到的面试题，不限于自己面试中遇到的，平时看到的，听别人说的。">
 <meta name="twitter:image" content="https://images2017.cnblogs.com/blog/849589/201708/849589-20170810192309683-590729765.png">
-  <link rel="canonical" href="http://yoursite.com/2020/05/24/interview-question/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: false,
-    isPost: true,
-    isPage: false,
-    isArchive: false
-  };
-</script>
+<link rel="canonical" href="http://yoursite.com/2020/05/24/interview-question/">
 
-  <title>总结看到的面试题 | zcdll's Blog</title>
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2020/05/24/interview-question/","path":"2020/05/24/interview-question/","title":"总结看到的面试题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>总结看到的面试题 | crazcdll's Blog</title>
   
-
-
-
 
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/rss.xml" title="crazcdll's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">zcdll's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-        <p class="site-subtitle">Be Happy</p>
-      
   </div>
 
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">crazcdll's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Be Happy</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
     </div>
   </div>
 </div>
+
 
 
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-      
-      
-      
-        
-        <li class="menu-item menu-item-home">
-      
-    
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-tags">
-      
-    
-
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-categories">
-      
-    
-
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-archives">
-      
-    
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-powerfultools">
-      
-    
-
-    <a href="/powerfultools/" rel="section"><i class="fa fa-fw fa-flash"></i>利器</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-about">
-      
-    
-
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
-
-  </li>
-      
-      
-      
-        
-        <li class="menu-item menu-item-commonweal">
-      
-    
-
-    <a href="/404.html" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
-
-  </li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-powerfultools"><a href="/powerfultools/" rel="section"><i class="flash fa-fw"></i>powerfultools</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-commonweal"><a href="/404.html" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a></li>
   </ul>
-
-    
-
 </nav>
+
+
+
+
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC1%E9%A2%98%EF%BC%9A%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E4%B8%AD-flex-0-1-auto-%E8%A1%A8%E7%A4%BA%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="nav-number">1.</span> <span class="nav-text">第1题：弹性盒子中 flex: 0 1 auto 表示什么意思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E9%A2%98%EF%BC%9A%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0-Array-prototype-splice"><span class="nav-number">2.</span> <span class="nav-text">第2题：模拟实现 Array.prototype.splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3%E9%A2%98%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98-ETag-%E9%87%8C%E7%9A%84%E5%80%BC%E6%98%AF%E6%80%8E%E4%B9%88%E7%94%9F%E6%88%90%E7%9A%84"><span class="nav-number">3.</span> <span class="nav-text">第3题：浏览器缓存 ETag 里的值是怎么生成的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC4%E9%A2%98%EF%BC%9Anull-%E5%92%8C-undefined-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">第4题：null 和 undefined 有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9B%B8%E5%90%8C%E7%82%B9"><span class="nav-number">4.0.1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">4.0.2.</span> <span class="nav-text">不同点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC5%E9%A2%98%EF%BC%9A%E6%8C%89%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F"><span class="nav-number">5.</span> <span class="nav-text">第5题：按日期排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC6%E9%A2%98%EF%BC%9A%E8%AF%B7%E5%AE%8C%E6%88%90%E4%B8%8B%E6%96%B9%E6%89%80%E7%A4%BA%E7%9A%84%E5%87%BD%E6%95%B0-calc"><span class="nav-number">6.</span> <span class="nav-text">第6题：请完成下方所示的函数 calc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC7%E9%A2%98%EF%BC%9AWebpack-%E6%80%8E%E4%B9%88%E7%BC%96%E8%AF%91-let-const-%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">第7题：Webpack 怎么编译 let const 块级作用域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC8%E9%A2%98%EF%BC%9A%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8B%BF%E5%88%B0-index-html-%E4%B9%8B%E5%90%8E%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">第8题：浏览器拿到 index.html 之后做了什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E6%80%BB%E7%BB%93"><span class="nav-number">8.1.</span> <span class="nav-text">小总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%84%E7%B1%BB%E8%B5%84%E6%BA%90%E9%98%BB%E5%A1%9E%E7%BD%91%E9%A1%B5%E5%8A%A0%E8%BD%BD%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">8.2.</span> <span class="nav-text">各类资源阻塞网页加载的情况</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC9%E9%A2%98%EF%BC%9AString-slice-%E5%92%8C-String-substring-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">第9题：String.slice 和 String.substring 的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%B8%E4%BC%BC%E7%82%B9"><span class="nav-number">9.1.</span> <span class="nav-text">相似点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substring-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">9.2.</span> <span class="nav-text">substring()的不同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#slice-%E7%9A%84%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="nav-number">9.3.</span> <span class="nav-text">slice() 的不同点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">9.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC10%E9%A2%98%EF%BC%9A%E5%A6%82%E4%BD%95%E6%8F%8F%E8%BF%B0XSS%E7%9A%84%E5%8D%B1%E5%AE%B3"><span class="nav-number">10.</span> <span class="nav-text">第10题：如何描述XSS的危害</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC11%E9%A2%98%EF%BC%9AReact-%E4%B8%AD-setState-%E5%90%88%E5%B9%B6%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">11.</span> <span class="nav-text">第11题：React 中 setState 合并的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC12%E9%A2%98%EF%BC%9AReact-Hooks-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">12.</span> <span class="nav-text">第12题：React Hooks 的实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC13%E9%A2%98%EF%BC%9AReact-Diff-%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">13.</span> <span class="nav-text">第13题：React Diff 的原理</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="crazcdll"
+      src="/images/lianmeng.jpg">
+  <p class="site-author-name" itemprop="name">crazcdll</p>
+  <div class="site-description" itemprop="description">keep going</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crazcll" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crazcll" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/zcdll" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;zcdll" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
 
-  <div id="posts" class="posts-expand">
-      <article itemscope itemtype="http://schema.org/Article">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
-  
-  <div class="post-block post">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/24/interview-question/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zcdll">
-      <meta itemprop="description" content="keep going">
       <meta itemprop="image" content="/images/lianmeng.jpg">
+      <meta itemprop="name" content="crazcdll">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zcdll's Blog">
+      <meta itemprop="name" content="crazcdll's Blog">
+      <meta itemprop="description" content="keep going">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="总结看到的面试题 | crazcdll's Blog">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">总结看到的面试题
-
-          
+        <h1 class="post-title" itemprop="name headline">
+          总结看到的面试题
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2020-05-24 09:27:24" itemprop="dateCreated datePublished" datetime="2020-05-24T09:27:24+08:00">2020-05-24</time>
-            </span>
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-06 21:59:20" itemprop="dateModified" datetime="2020-06-06T21:59:20+08:00">2020-06-06</time>
-              </span>
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/面试/" itemprop="url" rel="index"><span itemprop="name">面试</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span id="/2020/05/24/interview-question/" class="post-meta-item leancloud_visitors" data-flag-title="总结看到的面试题" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-          
-  
-  <span class="post-meta-item">
-    
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
+        <i class="far fa-calendar"></i>
       </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/05/24/interview-question/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2020/05/24/interview-question/" itemprop="commentCount"></span></a>
-  </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-05-24 09:27:24" itemprop="dateCreated datePublished" datetime="2020-05-24T09:27:24+08:00">2020-05-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2020-09-14 22:52:35" itemprop="dateModified" datetime="2020-09-14T22:52:35+08:00">2020-09-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9D%A2%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">面试</span></a>
+        </span>
+    </span>
+
   
-  
+    <span id="/2020/05/24/interview-question/" class="post-meta-item leancloud_visitors" data-flag-title="总结看到的面试题" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+</div>
 
         </div>
       </header>
@@ -345,14 +267,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>如题，总结看到的面试题，不限于自己面试中遇到的，平时看到的，听别人说的。</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<h3 id="第1题：弹性盒子中-flex-0-1-auto-表示什么意思"><a href="#第1题：弹性盒子中-flex-0-1-auto-表示什么意思" class="headerlink" title="第1题：弹性盒子中 flex: 0 1 auto 表示什么意思"></a>第1题：弹性盒子中 flex: 0 1 auto 表示什么意思</h3><p><a href="https://developer.mozilla.org/zh-CN/css" target="_blank" rel="noopener">CSS</a>属性 <strong><code>flex</code></strong> 规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间。这是一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Shorthand_properties" target="_blank" rel="noopener">简写属性</a>，用来设置 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow" target="_blank" rel="noopener"><code>flex-grow</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-shrink" target="_blank" rel="noopener"><code>flex-shrink</code></a> 与 <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis" target="_blank" rel="noopener"><code>flex-basis</code></a>。</p>
+<h3 id="第1题：弹性盒子中-flex-0-1-auto-表示什么意思"><a href="#第1题：弹性盒子中-flex-0-1-auto-表示什么意思" class="headerlink" title="第1题：弹性盒子中 flex: 0 1 auto 表示什么意思"></a>第1题：弹性盒子中 flex: 0 1 auto 表示什么意思</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/css">CSS</a>属性 <strong><code>flex</code></strong> 规定了弹性元素如何伸长或缩短以适应flex容器中的可用空间。这是一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Shorthand_properties">简写属性</a>，用来设置 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-grow"><code>flex-grow</code></a>, <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-shrink"><code>flex-shrink</code></a> 与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex-basis"><code>flex-basis</code></a>。</p>
 <p>相当于 <code>flex: initial;</code></p>
-<h3 id="第2题：模拟实现-Array-prototype-splice"><a href="#第2题：模拟实现-Array-prototype-splice" class="headerlink" title="第2题：模拟实现 Array.prototype.splice"></a>第2题：模拟实现 Array.prototype.splice</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回的是 移除掉的元素</span></span><br><span class="line"><span class="comment">// 要改变原数组</span></span><br><span class="line"><span class="comment">// 如果 newItems 有值，还要加在 start 处</span></span><br><span class="line"><span class="comment">// 删除元素的个数和添加元素的个数没有关系</span></span><br><span class="line"><span class="comment">// 边界判断</span></span><br><span class="line"><span class="comment">// 删除元素的思路，1- 改变 this.length 2- this[index] = data</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**思路1</span></span><br><span class="line"><span class="comment"> * 通过 this.length 删除掉需要删除掉的元素</span></span><br><span class="line"><span class="comment"> * 然后通过 push 把原数组剩余的 right 和 新插入的元素拼接到数组的结尾</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Array</span>.prototype._splice1 = <span class="function"><span class="keyword">function</span> (<span class="params">start, length, ...newItems</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断 start 是否超过了 数组长度</span></span><br><span class="line">  <span class="keyword">if</span> (start &gt; <span class="keyword">this</span>.length - <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 判断 start 的左边界</span></span><br><span class="line">    <span class="comment">// 根据 splice 原方法判断而来，如果 start 传入负值</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值比原数组长度还大，则从 0 开始截取</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值没有原数组长度大，则和原来的效果一样，等于 从某个负值开始截取一定长度的数组</span></span><br><span class="line">    <span class="keyword">if</span> (start &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(start) &lt; <span class="keyword">this</span>.length) &#123;</span><br><span class="line">        start += <span class="keyword">this</span>.length;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        start = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    result = <span class="keyword">this</span>.slice(start, start + length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> right = <span class="keyword">this</span>.slice(start + length, <span class="keyword">this</span>.length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.length = start;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (newItems.length !== <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; newItems.length; i++) &#123;</span><br><span class="line">        <span class="keyword">this</span>.push(newItems[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; right.length; i++) &#123;</span><br><span class="line">      <span class="keyword">this</span>.push(right[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**思路2</span></span><br><span class="line"><span class="comment"> * 通过 this[index] = data 来直接改变原数组的值</span></span><br><span class="line"><span class="comment"> * 然后通过 this.length = xxx 来保证数组的长度</span></span><br><span class="line"><span class="comment"> * 例如：如果没有新添元素，或者 删除到了原数组的结尾，则 this.length = start 可以正确删除元素</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">Array</span>.prototype._splice2 = <span class="function"><span class="keyword">function</span> (<span class="params">start, length, ...newItems</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (start &gt; <span class="keyword">this</span>.length - <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 判断 start 的左边界</span></span><br><span class="line">    <span class="comment">// 根据 splice 原方法判断而来，如果 start 传入负值</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值比原数组长度还大，则从 0 开始截取</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值没有原数组长度大，则和原来的效果一样，等于 从某个负值开始截取一定长度的数组</span></span><br><span class="line">    <span class="keyword">if</span> (start &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(start) &lt; <span class="keyword">this</span>.length) &#123;</span><br><span class="line">        start += <span class="keyword">this</span>.length;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        start = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">this</span>.slice(start, start + length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> right = <span class="keyword">this</span>.slice(start, start + length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> addIndex = start;</span><br><span class="line">    newItems.concat(right).forEach(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>[addIndex] = item;</span><br><span class="line">      addIndex++;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.length = addIndex;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a._splice(<span class="number">1</span>, <span class="number">3</span>), <span class="string">"---a._splice()"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a._splice1(<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>), <span class="string">"---a._splice1()"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a, <span class="string">"---a"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b._splice1(<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>), <span class="string">"---b._splice1()"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b, <span class="string">"---b"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="第2题：模拟实现-Array-prototype-splice"><a href="#第2题：模拟实现-Array-prototype-splice" class="headerlink" title="第2题：模拟实现 Array.prototype.splice"></a>第2题：模拟实现 Array.prototype.splice</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回的是 移除掉的元素</span></span><br><span class="line"><span class="comment">// 要改变原数组</span></span><br><span class="line"><span class="comment">// 如果 newItems 有值，还要加在 start 处</span></span><br><span class="line"><span class="comment">// 删除元素的个数和添加元素的个数没有关系</span></span><br><span class="line"><span class="comment">// 边界判断</span></span><br><span class="line"><span class="comment">// 删除元素的思路，1- 改变 this.length 2- this[index] = data</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**思路1</span></span><br><span class="line"><span class="comment"> * 通过 this.length 删除掉需要删除掉的元素</span></span><br><span class="line"><span class="comment"> * 然后通过 push 把原数组剩余的 right 和 新插入的元素拼接到数组的结尾</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">_splice1</span> = <span class="keyword">function</span> (<span class="params">start, length, ...newItems</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> result = [];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断 start 是否超过了 数组长度</span></span><br><span class="line">  <span class="keyword">if</span> (start &gt; <span class="variable language_">this</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 判断 start 的左边界</span></span><br><span class="line">    <span class="comment">// 根据 splice 原方法判断而来，如果 start 传入负值</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值比原数组长度还大，则从 0 开始截取</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值没有原数组长度大，则和原来的效果一样，等于 从某个负值开始截取一定长度的数组</span></span><br><span class="line">    <span class="keyword">if</span> (start &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">abs</span>(start) &lt; <span class="variable language_">this</span>.<span class="property">length</span>) &#123;</span><br><span class="line">        start += <span class="variable language_">this</span>.<span class="property">length</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        start = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    result = <span class="variable language_">this</span>.<span class="title function_">slice</span>(start, start + length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> right = <span class="variable language_">this</span>.<span class="title function_">slice</span>(start + length, <span class="variable language_">this</span>.<span class="property">length</span>);</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">length</span> = start;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (newItems.<span class="property">length</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; newItems.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">push</span>(newItems[i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; right.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">push</span>(right[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**思路2</span></span><br><span class="line"><span class="comment"> * 通过 this[index] = data 来直接改变原数组的值</span></span><br><span class="line"><span class="comment"> * 然后通过 this.length = xxx 来保证数组的长度</span></span><br><span class="line"><span class="comment"> * 例如：如果没有新添元素，或者 删除到了原数组的结尾，则 this.length = start 可以正确删除元素</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">_splice2</span> = <span class="keyword">function</span> (<span class="params">start, length, ...newItems</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (start &gt; <span class="variable language_">this</span>.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 判断 start 的左边界</span></span><br><span class="line">    <span class="comment">// 根据 splice 原方法判断而来，如果 start 传入负值</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值比原数组长度还大，则从 0 开始截取</span></span><br><span class="line">    <span class="comment">// 如果负值的绝对值没有原数组长度大，则和原来的效果一样，等于 从某个负值开始截取一定长度的数组</span></span><br><span class="line">    <span class="keyword">if</span> (start &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="title class_">Math</span>.<span class="title function_">abs</span>(start) &lt; <span class="variable language_">this</span>.<span class="property">length</span>) &#123;</span><br><span class="line">        start += <span class="variable language_">this</span>.<span class="property">length</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        start = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> result = <span class="variable language_">this</span>.<span class="title function_">slice</span>(start, start + length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> right = <span class="variable language_">this</span>.<span class="title function_">slice</span>(start, start + length);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> addIndex = start;</span><br><span class="line">    newItems.<span class="title function_">concat</span>(right).<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>[addIndex] = item;</span><br><span class="line">      addIndex++;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">length</span> = addIndex;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">_splice</span>(<span class="number">1</span>, <span class="number">3</span>), <span class="string">&quot;---a._splice()&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="title function_">_splice1</span>(<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>), <span class="string">&quot;---a._splice1()&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a, <span class="string">&quot;---a&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b.<span class="title function_">_splice1</span>(<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">0</span>), <span class="string">&quot;---b._splice1()&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b, <span class="string">&quot;---b&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h3 id="第3题：浏览器缓存-ETag-里的值是怎么生成的"><a href="#第3题：浏览器缓存-ETag-里的值是怎么生成的" class="headerlink" title="第3题：浏览器缓存 ETag 里的值是怎么生成的"></a>第3题：浏览器缓存 ETag 里的值是怎么生成的</h3><p>ETag 是 Entity Tag 的缩写，实体标签 的意思</p>
 <p>ETag 是Web的一种缓存机制，用来表示某个资源是否已经被修改了，是否需要重新下载。没有被修改的话，可以返回 304 HTTP Code。</p>
@@ -360,14 +280,16 @@
 <p>大体是 last-modified-time 和 content-length 的16进制组合。</p>
 <p>参考资料：</p>
 <ol>
-<li><p><a href="https://zh.wikipedia.org/wiki/HTTP_ETag" target="_blank" rel="noopener">HTTP ETag</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/HTTP_ETag">HTTP ETag</a></p>
 </li>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/ETag" target="_blank" rel="noopener">ETag</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/ETag">ETag</a></p>
 </li>
 </ol>
 <h3 id="第4题：null-和-undefined-有什么区别？"><a href="#第4题：null-和-undefined-有什么区别？" class="headerlink" title="第4题：null 和 undefined 有什么区别？"></a>第4题：null 和 undefined 有什么区别？</h3><h5 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h5><p>大写的 <code>Null</code> 和 <code>Undefined</code> 是 JavaScript 的基本数据类型，都只有一个值，对应的是 <code>null</code> 和 <code>undefined</code>。</p>
 <p>都表示一个 <strong>无效的值</strong>，所以不能访问属性，会报错 <code>null``.toString(); undefined.toString();</code>。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>); <span class="comment">// NaN</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 在比较相等性之前，null 没有被转换为其他类型</span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span> ; <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">undefined</span> !== <span class="literal">null</span>;  <span class="comment">// true, 类型不相同</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span>; <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Number</span>(<span class="literal">null</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="title class_">Number</span>(<span class="literal">undefined</span>); <span class="comment">// NaN</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// 在比较相等性之前，null 没有被转换为其他类型</span></span><br><span class="line"><span class="literal">null</span> == <span class="number">0</span> ; <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="literal">undefined</span> !== <span class="literal">null</span>;  <span class="comment">// true, 类型不相同</span></span><br></pre></td></tr></table></figure>
+
+
 
 <h5 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h5><p><code>Undefined</code> 的字面意思就是：未定义的值 。这个值的语义是，希望<strong>表示一个变量最原始的状态，而非人为操作的结果 。</strong>最后一句是重点。</p>
 <p>这种原始状态会在以下 4 种场景中出现：</p>
@@ -384,7 +306,7 @@
 <p><code>Null</code> 的字面意思是：空值  。这个值的语义是，希望<strong>表示 一个对象被人为的重置为空对象，而非一个变量最原始的状态 。</strong> 在内存里的表示就是，栈中的变量没有指向堆中的内存对象，即：</p>
 <p><img src="https://images2017.cnblogs.com/blog/849589/201708/849589-20170810192309683-590729765.png" alt="img"></p>
 <p>当一个对象被赋值了null 以后，原来的对象在内存中就处于游离状态，GC 会择机回收该对象并释放内存。因此，如果需要释放某个对象，就将变量设置为 null，即表示该对象已经被清空，目前无效状态。试想一下，如果此处把 null 换成 undefined 会不会感到别扭? 显然语义不通，其操作不能正确的表达其想要的行为。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === <span class="string">'object'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span> === <span class="string">&#x27;object&#x27;</span> </span><br></pre></td></tr></table></figure>
 
 <p>null 有属于自己的类型 Null，而不属于Object类型，typeof 之所以会判定为 Object 类型，是因为 JavaScript 数据类型在底层都是以二进制的形式表示的，<strong>二进制的前三位为 0 会被 typeof 判断为对象类型</strong>，而 null 的二进制位恰好都是 0 ，因此，null 被误判断为 Object 类型。</p>
 <blockquote>
@@ -395,268 +317,185 @@
 <p>110 - 布尔类型，数据是布尔值</p>
 </blockquote>
 <p>其实，我们可以通过另一种方法获取 null 的真实类型：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>) ; <span class="comment">// [object Null]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="literal">null</span>) ; <span class="comment">// [object Null]</span></span><br></pre></td></tr></table></figure>
 
 <p>通过 Object 原型上的toString() 方法可以获取到JavaScript 中对象的真实数据类型，当然 undefined 类型也可以通过这种方式来获取：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>) ; <span class="comment">// [object Undefined]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">toString</span>.<span class="title function_">call</span>(<span class="literal">undefined</span>) ; <span class="comment">// [object Undefined]</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="第5题：按日期排序"><a href="#第5题：按日期排序" class="headerlink" title="第5题：按日期排序"></a>第5题：按日期排序</h3><p>如下所示表格，点击 <code>#data .date</code> 元素后使表格中数据「按日期排序」，在有序以后再次点击该元素，若当前是「正序」则改为「倒序」，若当前是「倒序」则改为「正序」。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">&quot;data&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span>日期<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;total&quot;</span>&gt;</span>总次数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">id</span>=<span class="string">&#x27;body&#x27;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2017年10月23日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>68,112<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2017年8月6日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>68,020<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2017年11月11日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>69,433<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>2016年5月12日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>69,699<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>解答</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    如下所示表格，点击 #data.date 元素后使表格中数据「按日期排序」，在有序以后再次点击该元素，若当前是「正序」则改为「倒序」，若当前是「倒序」则改为「正序」。</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span> <span class="attr">id</span>=<span class="string">&quot;data&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;date&quot;</span>&gt;</span>日期<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">class</span>=<span class="string">&quot;total&quot;</span>&gt;</span>总次数<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">id</span>=<span class="string">&#x27;body&#x27;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>2017年10月23日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>68,112<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>2017年8月6日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>68,020<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>2017年11月11日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>69,433<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>2016年5月12日<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>69,699<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> button = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#data .date&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> sort = <span class="string">&#x27;&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    button.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">const</span> dates = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;#body tr&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">let</span> newDates = []</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (newDates.<span class="property">length</span> === <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        dates.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 计算时间戳</span></span></span><br><span class="line"><span class="language-javascript">          newDates.<span class="title function_">push</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">date</span>: <span class="keyword">new</span> <span class="title class_">Date</span>(item.<span class="property">children</span>[<span class="number">0</span>].<span class="property">innerText</span>.<span class="title function_">replace</span>(<span class="string">&#x27;年&#x27;</span>, <span class="string">&#x27;/&#x27;</span>).<span class="title function_">replace</span>(<span class="string">&#x27;月&#x27;</span>, <span class="string">&#x27;/&#x27;</span>).<span class="title function_">replace</span>(<span class="string">&#x27;日&#x27;</span>, <span class="string">&#x27;/&#x27;</span>)),</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">dateText</span>: item.<span class="property">children</span>[<span class="number">0</span>].<span class="property">innerText</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">value</span>: item.<span class="property">children</span>[<span class="number">1</span>].<span class="property">innerText</span></span></span><br><span class="line"><span class="language-javascript">          &#125;)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">if</span> (!sort || sort === <span class="string">&#x27;down&#x27;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        newDates = newDates.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.<span class="property">date</span> - b.<span class="property">date</span>)</span></span><br><span class="line"><span class="language-javascript">        sort = <span class="string">&#x27;up&#x27;</span></span></span><br><span class="line"><span class="language-javascript">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sort === <span class="string">&#x27;up&#x27;</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        newDates = newDates.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b.<span class="property">date</span> - a.<span class="property">date</span>)</span></span><br><span class="line"><span class="language-javascript">        sort = <span class="string">&#x27;down&#x27;</span></span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 清空children</span></span></span><br><span class="line"><span class="language-javascript">      dates.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#body&#x27;</span>).<span class="title function_">removeChild</span>(item))</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 添加新的 child</span></span></span><br><span class="line"><span class="language-javascript">      newDates.<span class="title function_">forEach</span>(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> tr = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;tr&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> td1 = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;td&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> td2 = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;td&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        td1.<span class="property">innerText</span> = item.<span class="property">dateText</span></span></span><br><span class="line"><span class="language-javascript">        td2.<span class="property">innerText</span> = item.<span class="property">value</span></span></span><br><span class="line"><span class="language-javascript">        tr.<span class="title function_">appendChild</span>(td1)</span></span><br><span class="line"><span class="language-javascript">        tr.<span class="title function_">appendChild</span>(td2)</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;#body&#x27;</span>).<span class="title function_">appendChild</span>(tr)</span></span><br><span class="line"><span class="language-javascript">      &#125;)</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="第6题：请完成下方所示的函数-calc"><a href="#第6题：请完成下方所示的函数-calc" class="headerlink" title="第6题：请完成下方所示的函数 calc"></a>第6题：请完成下方所示的函数 calc</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Number</span>&#125; n 乘积</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">Array</span>&#125; 由 n 被拆解后的乘数组成的数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">calc</span>(<span class="params">n</span>)&#123;</span><br><span class="line">    <span class="comment">// todo</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如：</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">7</span>));</span><br><span class="line"><span class="comment">// [7]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">8</span>));</span><br><span class="line"><span class="comment">// [2, 2, 2]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">24</span>));</span><br><span class="line"><span class="comment">// [2, 2, 2, 3]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">30</span>));</span><br><span class="line"><span class="comment">// [2, 3, 5]</span></span><br></pre></td></tr></table></figure>
+
+<p>答案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">Number</span>&#125; n 乘积</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">Array</span>&#125; 由 n 被拆解后的乘数组成的数组</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 思路</span></span><br><span class="line"><span class="comment"> * 1. 从 2 开始除，如果可以整除就 push 到 result 数组中</span></span><br><span class="line"><span class="comment"> * 2. 每次循环都是从 2 开始，到 这个数字 本身结束</span></span><br><span class="line"><span class="comment"> * 3. 如果都不能整除，就 push 本身</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">calc</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> result = [];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">helper</span>(<span class="params">number</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> divisor = <span class="number">2</span>; divisor &lt;= number; divisor++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (number % divisor === <span class="number">0</span>) &#123;</span><br><span class="line">        result.<span class="title function_">push</span>(divisor);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (divisor !== number) &#123;</span><br><span class="line">          <span class="title function_">helper</span>(number / divisor);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果找到了能整除的，就不再找了</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="title function_">helper</span>(n);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如：</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">7</span>));</span><br><span class="line"><span class="comment">// [7]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">8</span>));</span><br><span class="line"><span class="comment">// [2, 2, 2]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">24</span>));</span><br><span class="line"><span class="comment">// [2, 2, 2, 3]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">calc</span>(<span class="number">30</span>));</span><br><span class="line"><span class="comment">// [2, 3, 5]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="第7题：Webpack-怎么编译-let-const-块级作用域？"><a href="#第7题：Webpack-怎么编译-let-const-块级作用域？" class="headerlink" title="第7题：Webpack 怎么编译 let const 块级作用域？"></a>第7题：Webpack 怎么编译 let const 块级作用域？</h3><p>Webpack 不创造语法，只是语法的搬运工</p>
+<h3 id="第8题：浏览器拿到-index-html-之后做了什么？"><a href="#第8题：浏览器拿到-index-html-之后做了什么？" class="headerlink" title="第8题：浏览器拿到 index.html 之后做了什么？"></a>第8题：浏览器拿到 index.html 之后做了什么？</h3><ul>
+<li>HTML代码转化成 <strong>DOM</strong>，并并行地获取外部资源（包括HTML中出现的JS、CSS、图片文件）</li>
+<li>CSS文件下载完成，CSS代码转化成 <strong>CSSOM</strong>（CSS Object Model）</li>
+<li>结合DOM和CSSOM，生成一棵 <strong>渲染树</strong>（包含每个节点的视觉信息）</li>
+<li>生成布局（Layout）：将所有渲染树的所有节点进行平面合成，该步骤可以计算出元素在网页中的位置</li>
+<li>绘制（Paint）：将网页内容绘制在屏幕上</li>
+</ul>
+<h4 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h4><ul>
+<li>外部资源是在开头<strong>并行获取</strong>的，并非HTML解析到引用行再发请求的；</li>
+<li><strong>CSS文件加载的速度是影响首次Paint时间的因素</strong>，当CSS文件下载完成后才能进行CSSOM和渲染树的构建，然后才是Layout和Paint过程；</li>
+<li><strong>JS文件加载的速度不影响首次Paint时间</strong>，即使JS文件本身有修改DOM节点的操作，也只是在JS文件加载完成后再进行一次Layout和Paint；</li>
+</ul>
+<h4 id="各类资源阻塞网页加载的情况"><a href="#各类资源阻塞网页加载的情况" class="headerlink" title="各类资源阻塞网页加载的情况"></a>各类资源阻塞网页加载的情况</h4><p>阻塞分两种：</p>
+<ol>
+<li>阻塞 HTML 解析</li>
+<li>阻塞 渲染</li>
+</ol>
+<p>CSS 影响首次绘制时间，应该尽快加载，因此将其放在head标签处以保障能在解析完HTML后发出请求；</p>
+<p>JS 影响 HTML 解析 和 渲染，但不影响首屏，他影响的是 JS 下载完之后页面内容的解析与渲染；</p>
+<p>图片不影响首屏时间，但会影响Load事件的时机（没有找到合适的参考文献，待我另起一篇文章补充）；</p>
+<h3 id="第9题：String-slice-和-String-substring-的区别"><a href="#第9题：String-slice-和-String-substring-的区别" class="headerlink" title="第9题：String.slice 和 String.substring 的区别"></a>第9题：String.slice 和 String.substring 的区别</h3><p>都是用来提取字符串，都生成新的字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Syntax</span>: string.<span class="title function_">slice</span>(start, stop);</span><br><span class="line"><span class="title class_">Syntax</span>: string.<span class="title function_">substring</span>(start, stop);</span><br></pre></td></tr></table></figure>
+
+<h4 id="相似点"><a href="#相似点" class="headerlink" title="相似点"></a>相似点</h4><ol>
+<li>如果 <code>start</code> 和 <code>stop</code> 相等，返回 <strong>空字符串</strong></li>
+<li>如果省略 <code>stop</code>，一直提取到字符串末尾 </li>
+<li>如果任意一个参数大于字符串的长度，则会用字符串的长度代替这个参数</li>
+</ol>
+<h4 id="substring-的不同点"><a href="#substring-的不同点" class="headerlink" title="substring()的不同点"></a><code>substring()</code>的不同点</h4><ol>
+<li>如果 <code>start</code> 大于 <code>stop</code>，则会交换两个参数的位置</li>
+<li>如果任意一个参数是 <strong>负数</strong> 或者 <code>NaN</code>，则会当作 0 来处理</li>
+</ol>
+<h4 id="slice-的不同点"><a href="#slice-的不同点" class="headerlink" title="slice() 的不同点"></a><code>slice()</code> 的不同点</h4><ol>
+<li>如果 <code>start</code> 大于 <code>stop</code>，则返回 <strong>空字符串</strong> </li>
+<li>如果 start 是负数，会用 <code>Math.max(0, 字符串长度+start)</code>  来代替</li>
+<li>如果 stop 是负数，会用 <code>Math.max(0, 字符串长度+end)</code> 来代替</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>如果字符串非空，除非 <code>start</code> 和 <code>stop</code> 相等，或者 从 stop 开始提取，否则 <code>substring()</code> 一定会返回字符，<code>substring() </code>的容错率高一些</li>
+<li><code>slice()</code> 处理负数会拿字符串长度相加，<code>substring() </code> 直接取 0</li>
+</ol>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2243824/what-is-the-difference-between-string-slice-and-string-substring">What is the difference between String.slice and String.substring?</a></p>
+<h3 id="第10题：如何描述XSS的危害"><a href="#第10题：如何描述XSS的危害" class="headerlink" title="第10题：如何描述XSS的危害"></a>第10题：如何描述XSS的危害</h3><p>如果一个恶意脚本在你的页面上被运行，它就有权访问这个页面的所有状态和执行该页面所能做的所有操作。</p>
+<p>它能与你的服务器进行交互，而你的服务器将不能区分正当请求和恶意请求。</p>
+<p>恶意脚本还能访问全局变对象，这使得它有权访问应用中除隐藏于闭包中的变量之外的所有数据。</p>
+<p>它可以访问document对象，这会使它有权访问用户所能看到的一切。</p>
+<p>它还给这个恶意脚本提供了与用户进行会话的能力。</p>
+<p>浏览器的地址栏和所有的反钓鱼程序会告诉用户这个会话是可靠的。</p>
+<p>document对象还给该恶意脚本授权访问网络，允许它取下载更多的恶意脚本，或者是在你的防火墙之内探测站点，或者是把它已经窃取的隐私内容发送给世界的任何一个服务器。</p>
+<h3 id="第11题：React-中-setState-合并的原理"><a href="#第11题：React-中-setState-合并的原理" class="headerlink" title="第11题：React 中 setState 合并的原理"></a>第11题：React 中 setState 合并的原理</h3><p>React 通过一个队列来存储需要批量更新的<code>setState</code>，然后用类似于 <strong>EventLoop</strong> 的方式来 异步 的调用执行。</p>
+<p>例如可以用 <code>Promise.resolve.then</code> 包裹起来最终要执行的函数，还可以用 <code>setTimeout</code>，总之就是需要先等待同步任务先执行完。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44537887">react setState核心实现原理</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903718219956232">react 常见setState的原理解析</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.poetries.top/2018/12/20/react-setState/">React之setState原理分析</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903638108733454">基于React 源码深入浅出setState:setState异步实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903671482810382">基于React 源码深入浅出setState:深度刨析updater的结构和原理</a></li>
+</ol>
+<h3 id="第12题：React-Hooks-的实现原理"><a href="#第12题：React-Hooks-的实现原理" class="headerlink" title="第12题：React Hooks 的实现原理"></a>第12题：React Hooks 的实现原理</h3><p>待补充</p>
+<h3 id="第13题：React-Diff-的原理"><a href="#第13题：React-Diff-的原理" class="headerlink" title="第13题：React Diff 的原理"></a>第13题：React Diff 的原理</h3><p>待补充</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/20346379">React 源码剖析系列 － 不可思议的 react diff</a></li>
+</ol>
 
     </div>
 
     
     
     
-        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center;">
-  <img id="wechat_subscriber_qcode" src="/images/wechat-qcode.jpg" alt="zcdll wechat" style="width: 200px; max-width: 100%;">
-  <div>交流或订阅，请长按或扫描上方微信二维码</div>
-</div>
 
-      
-        
-      
-        <div id="reward-container">
-  <div>赞赏是对我最大的支持！</div>
-  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
   </button>
-  <div id="qr" style="display: none;">
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/wechatpay.jpg" alt="zcdll 微信支付">
-        <p>微信支付</p>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="crazcdll 微信">
+        <span>微信</span>
       </div>
-        
-      
-      <div style="display: inline-block">
-        <img src="/images/alipay.jpg" alt="zcdll 支付宝">
-        <p>支付宝</p>
+      <div>
+        <img src="/images/alipay.jpg" alt="crazcdll 支付宝">
+        <span>支付宝</span>
       </div>
 
   </div>
 </div>
 
-      
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
 
-      <footer class="post-footer">
-          
-            
-          
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat-qcode.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
           <div class="post-tags">
-            
               <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-            
-              <a href="/tags/前端/" rel="tag"># 前端</a>
-            
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
               <a href="/tags/CSS/" rel="tag"># CSS</a>
-            
-              <a href="/tags/面试2€€22/" rel="tag"># 面试2€€22</a>
-            
-              <a href="/tags/面试题/" rel="tag"># 面试题</a>
-            
+              <a href="/tags/%E9%9D%A2%E8%AF%952%E2%82%AC%E2%82%AC22/" rel="tag"># 面试2€€22</a>
+              <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag"># 面试题</a>
           </div>
-        
 
         
 
           <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-              
-                <a href="/2020/05/22/js-event-loop/" rel="next" title="再看 Event loops">
+            <div class="post-nav-item">
+                <a href="/2020/05/22/js-event-loop/" rel="prev" title="再看 Event loops">
                   <i class="fa fa-chevron-left"></i> 再看 Event loops
                 </a>
-              
             </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2020/06/03/dive-into-react/" rel="prev" title="进入 React 稀薄地带">
+            <div class="post-nav-item">
+                <a href="/2020/06/03/dive-into-react/" rel="next" title="进入 React 稀薄地带">
                   进入 React 稀薄地带 <i class="fa fa-chevron-right"></i>
                 </a>
-              
             </div>
           </div>
-        
-      </footer>
-    
-  </div>
-  
-  
-  
+    </footer>
   </article>
-
-  </div>
-
-
-          </div>
-          
-    
-    <div class="comments" id="comments"></div>
-  
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-        
-        
-        
-        
-      
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第1题：弹性盒子中-flex-0-1-auto-表示什么意思"><span class="nav-number">1.</span> <span class="nav-text">第1题：弹性盒子中 flex: 0 1 auto 表示什么意思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第2题：模拟实现-Array-prototype-splice"><span class="nav-number">2.</span> <span class="nav-text">第2题：模拟实现 Array.prototype.splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第3题：浏览器缓存-ETag-里的值是怎么生成的"><span class="nav-number">3.</span> <span class="nav-text">第3题：浏览器缓存 ETag 里的值是怎么生成的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第4题：null-和-undefined-有什么区别？"><span class="nav-number">4.</span> <span class="nav-text">第4题：null 和 undefined 有什么区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#相同点"><span class="nav-number">4.0.1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#不同点"><span class="nav-number">4.0.2.</span> <span class="nav-text">不同点</span></a></li></ol></li></ol></li></ol></div>
-        
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image"
-      src="/images/lianmeng.jpg"
-      alt="zcdll">
-  <p class="site-author-name" itemprop="name">zcdll</p>
-  <div class="site-description" itemprop="description">keep going</div>
 </div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-        
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">67</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-categories">
-        
-          
-            <a href="/categories/">
-          
-        
-        <span class="site-state-item-count">26</span>
-        <span class="site-state-item-name">分类</span>
-        </a>
-      </div>
-    
-      
-      
-      <div class="site-state-item site-state-tags">
-        
-          
-            <a href="/tags/">
-          
-        
-        <span class="site-state-item-count">147</span>
-        <span class="site-state-item-name">标签</span>
-        </a>
-      </div>
-    
-  </nav>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
-  <div class="feed-link motion-element">
-    <a href="/rss.xml" rel="alternate">
-      <i class="fa fa-rss"></i>RSS
-    </a>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crazcdll</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
   </div>
-  <div class="links-of-author motion-element">
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="https://github.com/zcdll" title="GitHub &rarr; https://github.com/zcdll" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
-      </span>
-    
-      <span class="links-of-author-item">
-      
-      
-        
-      
-      
-        
-      
-        <a href="http://weibo.com/zcdll" title="Weibo &rarr; http://weibo.com/zcdll" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
-      </span>
-    
-  </div>
-
-
-
-      </div>
 
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">zcdll</span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.4.1</div>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-  </div>
+  </footer>
 
   
-  <script src="/lib/anime.min.js?v=3.1.0"></script>
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
-<script src="/js/schemes/muse.js?v=7.4.1"></script>
-<script src="/js/next-boot.js?v=7.4.1"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
 
@@ -664,71 +503,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
   
 
 
-<script>
-NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(item => {
-    return GUEST.includes(item);
-  });
-  new Valine({
-    el: '#comments',
-    verify: true,
-    notify: true,
-    appId: 'gp5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz',
-    appKey: 'hBcmnbod2qG3t7K4XecG6Y7Y',
-    placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-    avatar: 'retro',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: true,
-    lang: 'zh-cn' || 'zh-cn',
-    path: location.pathname,
-    recordIP: true,
-    serverURLs: ''
-  });
-}, window.Valine);
-</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"p5udvpHnNJ3p4pUwoxI7Orp-gzGzoHsz","app_key":"hBcmnbod2qG3t7K4XecG6Y7Y","server_url":null,"security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"crazcdll","repo":"zcdll-blog-gittalk","client_id":"cd26ec48395f5feb5289","client_secret":"ef9053cd205d4b5176d4933e75ac8090c89a62ac","admin_user":"crazcdll","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"a40bbec3a46f383c8ac7d7a5f0bfafa4"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </body>
 </html>
