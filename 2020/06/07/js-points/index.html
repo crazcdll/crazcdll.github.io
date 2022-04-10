@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/geek-modern-life.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/geek-modern-life.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="记录 JavaScript 中的冷知识，坑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavsScript 知识点 &amp; 冷知识">
+<meta property="og:url" content="http://yoursite.com/2020/06/07/js-points/index.html">
+<meta property="og:site_name" content="crazcdll&#39;s Blog">
+<meta property="og:description" content="记录 JavaScript 中的冷知识，坑">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-07T22:12:07.000Z">
+<meta property="article:modified_time" content="2022-04-10T03:15:36.474Z">
+<meta property="article:author" content="crazcdll">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="坑">
+<meta property="article:tag" content="冷知识">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://yoursite.com/2020/06/07/js-points/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://yoursite.com/2020/06/07/js-points/","path":"2020/06/07/js-points/","title":"JavsScript 知识点 & 冷知识"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavsScript 知识点 & 冷知识 | crazcdll's Blog</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/rss.xml" title="crazcdll's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">crazcdll's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Be Happy</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-powerfultools"><a href="/powerfultools/" rel="section"><i class="flash fa-fw"></i>powerfultools</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li><li class="menu-item menu-item-commonweal"><a href="/404.html" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#new-Array"><span class="nav-number">1.</span> <span class="nav-text">new Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">函数参数的形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%B0%E5%BF%86-apply-%E5%92%8C-call-%E5%8F%82%E6%95%B0%E5%BD%A2%E5%BC%8F%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="nav-number">3.</span> <span class="nav-text">记忆 apply 和 call 参数形式的技巧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-%E5%AF%B9%E8%B1%A1"><span class="nav-number">4.</span> <span class="nav-text">JavaScript 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7"><span class="nav-number">4.1.</span> <span class="nav-text">计算属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E5%B1%9E%E6%80%A7"><span class="nav-number">4.2.</span> <span class="nav-text">扩展属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E7%9B%B8%E5%85%B3"><span class="nav-number">5.</span> <span class="nav-text">阻止事件相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="nav-number">6.</span> <span class="nav-text">进制转换</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="crazcdll"
+      src="/images/lianmeng.jpg">
+  <p class="site-author-name" itemprop="name">crazcdll</p>
+  <div class="site-description" itemprop="description">keep going</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/crazcll" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;crazcll" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/zcdll" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;zcdll" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/js-points/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lianmeng.jpg">
+      <meta itemprop="name" content="crazcdll">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="crazcdll's Blog">
+      <meta itemprop="description" content="keep going">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavsScript 知识点 & 冷知识 | crazcdll's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavsScript 知识点 & 冷知识
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-06-08 06:12:07" itemprop="dateCreated datePublished" datetime="2020-06-08T06:12:07+08:00">2020-06-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>记录 JavaScript 中的冷知识，坑</p>
+<span id="more"></span>
+
+<p>先不分类，一旦分类了，就要分 1 2 3 级分类，然后还要解决于属于哪个分类，可以用标签的形式。</p>
+<h4 id="new-Array"><a href="#new-Array" class="headerlink" title="new Array"></a><code>new Array</code></h4><ol>
+<li>如果只传一个 <strong>number</strong> 参数，则会生成一个长度为1的空数组</li>
+<li>如果只传一个非 <strong>number</strong> 则这个值会作为数组的第一个元素，生成一个长度为1的数组</li>
+<li>如果传了 n 个参数，则会生成长度为 n 的数组。这里参数的形式应是 一个一个 的参数，不能是数组本身。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">1</span>)</span><br><span class="line"><span class="comment">// [empty]</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line"><span class="comment">// [&quot;a&quot;]</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="title class_">Symbol</span>)</span><br><span class="line"><span class="comment">// [ƒ]0: ƒ Symbol()length: 1__proto__: Array(0)</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="literal">null</span>)</span><br><span class="line"><span class="comment">// [null]</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="literal">undefined</span>)</span><br><span class="line"><span class="comment">// [undefined]</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="title class_">Object</span>)</span><br><span class="line"><span class="comment">// [ƒ]0: ƒ Object()length: 1__proto__: Array(0)</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>)&#125;)</span><br><span class="line"><span class="comment">// [ƒ]</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Array</span>(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">// [true]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> <span class="title class_">Array</span>(a) <span class="comment">// [[1,2,3,4,5]]</span></span><br><span class="line"><span class="keyword">const</span> c = <span class="keyword">new</span> <span class="title class_">Array</span>(...a) <span class="comment">// [1,2,3,4,5]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数参数的形式"><a href="#函数参数的形式" class="headerlink" title="函数参数的形式"></a>函数参数的形式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params">...arg</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">arguments</span>, <span class="string">&quot;---arguments&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(arg, <span class="string">&quot;---arg&quot;</span>); <span class="comment">// 这里 arg 是一个数组，调用函数的时候，写参数那里相当于写了 arg 的展开形式</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> a = <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="variable language_">arguments</span>);</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(a, <span class="string">&quot;---a&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// [Arguments] &#123; &#x27;0&#x27;: 1, &#x27;1&#x27;: 2, &#x27;2&#x27;: 3, &#x27;3&#x27;: 4, &#x27;4&#x27;: 5 &#125; ---arguments</span></span><br><span class="line"><span class="comment">// [ 1, 2, 3, 4, 5 ] ---arg</span></span><br><span class="line"><span class="comment">// [ [Arguments] &#123; &#x27;0&#x27;: 1, &#x27;1&#x27;: 2, &#x27;2&#x27;: 3, &#x27;3&#x27;: 4, &#x27;4&#x27;: 5 &#125; ] ---a</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>不能直接调用 扩展运算符，例如不能直接写 <code>...a</code>，必须写在一个可以接收这些参数的地方。</p>
+</blockquote>
+<h4 id="记忆-apply-和-call-参数形式的技巧"><a href="#记忆-apply-和-call-参数形式的技巧" class="headerlink" title="记忆 apply 和 call 参数形式的技巧"></a>记忆 apply 和 call 参数形式的技巧</h4><p>apply 和 array 有点像，所以 apply 接收 <strong>数组形式</strong> 的参数。</p>
+<p>这是它俩唯一的区别，在调用的时候，都会立即执行。</p>
+<h4 id="JavaScript-对象"><a href="#JavaScript-对象" class="headerlink" title="JavaScript 对象"></a>JavaScript 对象</h4><h5 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h5><p>从ECMAScript 2015开始，对象初始化语法开始支持计算属性名。其允许在[]中放入表达式，计算结果可以当做属性名。这种用法和用方括号访问属性非常类似，也就是已经用来读取和设置属性了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Computed property names (ES6)</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  [<span class="string">&quot;foo&quot;</span> + ++i]: i,</span><br><span class="line">  [<span class="string">&quot;foo&quot;</span> + ++i]: i,</span><br><span class="line">  [<span class="string">&quot;foo&quot;</span> + ++i]: i</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="property">foo1</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="property">foo2</span>); <span class="comment">// 2</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a.<span class="property">foo3</span>); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> param = <span class="string">&#x27;size&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> config = &#123;</span><br><span class="line">  [param]: <span class="number">12</span>,</span><br><span class="line">  [<span class="string">&quot;mobile&quot;</span> + param.<span class="title function_">charAt</span>(<span class="number">0</span>).<span class="title function_">toUpperCase</span>() + param.<span class="title function_">slice</span>(<span class="number">1</span>)]: <span class="number">4</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(config); <span class="comment">// &#123; size: 12, mobileSize: 4 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="扩展属性"><a href="#扩展属性" class="headerlink" title="扩展属性"></a>扩展属性</h5><p>可以使用扩展运算符将对象的枚举属性复制到一个新的对象上，不可以克隆原型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj1 = &#123; <span class="attr">foo</span>: <span class="string">&#x27;bar&#x27;</span>, <span class="attr">x</span>: <span class="number">42</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123; <span class="attr">foo</span>: <span class="string">&#x27;baz&#x27;</span>, <span class="attr">y</span>: <span class="number">13</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> clonedObj = &#123; ...obj1 &#125;;</span><br><span class="line"><span class="comment">// Object &#123; foo: &quot;bar&quot;, x: 42 &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mergedObj = &#123; ...obj1, ...obj2 &#125;;</span><br><span class="line"><span class="comment">// Object &#123; foo: &quot;baz&quot;, x: 42, y: 13 &#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign"><code>Object.assign()</code></a>会触发<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/set">setter</a>，而展开操作符则不会。</p>
+</blockquote>
+<h4 id="阻止事件相关"><a href="#阻止事件相关" class="headerlink" title="阻止事件相关"></a>阻止事件相关</h4><ol>
+<li><p><code>event.preventDefault</code><br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event"><code>Event</code></a> 接口的 <code>**preventDefault()**</code>方法，告诉<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/User_agent">user agent</a>：如果此事件没有被显式处理，它默认的动作也不应该照常执行。<br><strong>此事件还是继续传播，只是阻止了默认行为。</strong>除非碰到事件侦听器调用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopPropagation"><code>stopPropagation()</code></a> 或<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event/stopImmediatePropagation"><code>stopImmediatePropagation()</code></a>，才停止传播。</p>
+<p><strong>默认行为</strong> 例如点击复选框的的时候选中复选框，点击button的时候显示一个蓝色边框。</p>
+<p>你可以使用 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event/cancelable"><code>Event.cancelable</code></a> 来检查该事件是否支持取消。为一个不支持cancelable的事件调用<code>preventDefault()</code>将没有效果。</p>
+</li>
+<li><p><code>event.stopPropagation</code></p>
+<p>阻止捕获和冒泡阶段中当前事件的进一步传播。</p>
+<p>不仅仅阻止冒泡，同时阻止捕获和冒泡。</p>
+</li>
+<li><p><code>event.stopImmediatePropagation</code></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Event"><code>Event</code></a> 接口的 <code>stopImmediatePropagation()</code> 方法阻止监听同一事件的其他事件监听器被调用。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: <span class="number">#ccf</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">height</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">width</span>: <span class="number">150px</span>;</span></span><br><span class="line"><span class="language-css">      <span class="attribute">background-color</span>: <span class="number">#cfc</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>paragraph<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> p = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;p&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    p.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">alert</span>(<span class="string">&quot;我是p元素上被绑定的第一个监听函数&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    p.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">alert</span>(<span class="string">&quot;我是p元素上被绑定的第二个监听函数&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">      event.<span class="title function_">stopImmediatePropagation</span>();</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// event.stopPropagation()</span></span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 执行stopImmediatePropagation方法,阻止click事件冒泡,并且阻止p元素上绑定的其他click事件的事件监听函数的执行.</span></span></span><br><span class="line"><span class="language-javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    p.<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">alert</span>(<span class="string">&quot;我是p元素上被绑定的第三个监听函数&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// 该监听函数排在上个函数后面，该函数不会被执行</span></span></span><br><span class="line"><span class="language-javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;div&quot;</span>).<span class="title function_">addEventListener</span>(<span class="string">&quot;click&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">alert</span>(<span class="string">&quot;我是div元素,我是p元素的上层元素&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">      <span class="comment">// p元素的click事件没有向上冒泡，该函数不会被执行</span></span></span><br><span class="line"><span class="language-javascript">    &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><ol>
+<li><p>十进制转其他进制</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">111</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="number">021</span>, <span class="number">8</span>) <span class="comment">// 15</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">021</span>.<span class="title function_">toString</span>(), <span class="number">8</span>)</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">17</span>, <span class="number">8</span>) <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+
+<p><code>parseInt</code> 的结果都是按照 <strong>十进制</strong> 来显示，函数的意思是，把第一个参数，按照第二个参数的进制去理解，然后转为整数，用十进制表示出来。</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="crazcdll 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="crazcdll 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat-qcode.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/%E5%9D%91/" rel="tag"># 坑</a>
+              <a href="/tags/%E5%86%B7%E7%9F%A5%E8%AF%86/" rel="tag"># 冷知识</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/06/02/dive-into-react/" rel="prev" title="进入 React 稀薄地带">
+                  <i class="fa fa-chevron-left"></i> 进入 React 稀薄地带
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/06/12/whatwg-vs-w3c/" rel="next" title="关于 WHATWG 和 W3C">
+                  关于 WHATWG 和 W3C <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2016 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">crazcdll</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"crazcdll","repo":"crazcdll-blog-gitalk","client_id":"a232c6502d466b73b407","client_secret":"a26ee52e2f8b27841af77d8fb00a5eccce929c94","admin_user":"crazcdll","distraction_free_mode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9ddb5a1bb4f9972044319d840f0077d1"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
