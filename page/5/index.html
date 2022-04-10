@@ -133,7 +133,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">75</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -144,7 +144,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">134</span>
+        <span class="site-state-item-count">135</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -191,6 +191,98 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/own-python-pip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lianmeng.jpg">
+      <meta itemprop="name" content="crazcdll">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="crazcdll's Blog">
+      <meta itemprop="description" content="keep going">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | crazcdll's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2018/01/29/own-python-pip/" class="post-title-link" itemprop="url">给非 root 用户安装自己的 Python3 和 pip3</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2018-01-29 11:39:36" itemprop="dateCreated datePublished" datetime="2018-01-29T11:39:36+08:00">2018-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>需要在一台服务器上部署一套爬虫，用 Python 的 <a target="_blank" rel="noopener" href="https://scrapy.org/">Scrapy</a> 框架写的。由于不想跟系统的 Python 包混用，所以需要自己安装一套 Python 包。开发的时候用的是 <a target="_blank" rel="noopener" href="https://github.com/pypa/pipenv">pipenv</a> 来管理包，在服务器上部署之后可以使用，但是因为还需要用 <strong>crontab</strong> 来写一个定时任务每天运行一次爬虫，在写定时任务的时候发现，运行 <code>pipenv shell</code> 后不能继续执行 <strong>.sh 文件</strong> 中下一行的命令，发现是切换了 <strong>bash</strong> ，在 <code>exit</code> 退出 <strong>pipenv</strong> 后会继续运行 <strong>.sh 文件</strong> 中下一行的命令，所以只得舍弃 <strong>pipenv</strong>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2018/01/29/own-python-pip/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/28/docker-tutorial-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -227,7 +319,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -319,7 +411,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -411,7 +503,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -503,7 +595,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -600,7 +692,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -692,7 +784,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -787,7 +879,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -881,7 +973,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -973,7 +1065,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
+      <time title="修改时间：2022-04-10 12:13:49" itemprop="dateModified" datetime="2022-04-10T12:13:49+08:00">2022-04-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1002,102 +1094,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/01/10/git-ssh/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/09/hexo@1-0-4&next@6-0-0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/lianmeng.jpg">
-      <meta itemprop="name" content="crazcdll">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="crazcdll's Blog">
-      <meta itemprop="description" content="keep going">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | crazcdll's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/01/09/hexo@1-0-4&next@6-0-0/" class="post-title-link" itemprop="url">最新版 Hexo @3.4.4 和 Next 主题 @6.0.0 安装和更新教程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-01-09 09:41:02" itemprop="dateCreated datePublished" datetime="2018-01-09T09:41:02+08:00">2018-01-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-10 11:15:36" itemprop="dateModified" datetime="2022-04-10T11:15:36+08:00">2022-04-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%8D%9A%E5%AE%A2/" itemprop="url" rel="index"><span itemprop="name">博客</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>之前用的 <a target="_blank" rel="noopener" href="http://theme-next.iissnan.com/">Next 主题</a> 是 5.0.0 版本，一直没有更新过，最近看到 Next 出了 <a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">6.0.0 版本</a>，想要更新一下，然后 Hexo 也一直没更新过，所以就一起更新了。</p>
-<p>这里需要注意的是，Next 作者在 6.0.0 大版本之后，更改了仓库地址，新地址在 <a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">theme-next</a> 下。同时也启用了新 <a target="_blank" rel="noopener" href="https://theme-next.org/">官网</a> ，不过要在 <strong>2018年1月17日</strong> 才正式上线，现在只有一个倒计时的页面。</p>
-<p>因为考虑到这次是大版本更新，以及我之前的 Next 主题的目录中 <code>.git</code> 中的仓库地址变成了本地，担心如果改过来，可能会有未知的问题，还有就是想重新配置一遍 Hexo + Next，所以决定重新安装 Hexo + Next。</p>
-<p>如果不打算重新安装的话，在 Next 的目录中运行 <code>git pull</code> 就可以更新了，如果报错了可以针对性的解决。</p>
-<p>下面记录过程。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/01/09/hexo@1-0-4&next@6-0-0/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
